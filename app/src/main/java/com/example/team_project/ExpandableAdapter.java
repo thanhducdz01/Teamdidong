@@ -71,6 +71,11 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
         ImageView imageView_left = view.findViewById(R.id.img_left);
         TextView textView = view.findViewById(R.id.txtView);
         GroupObject object = groupObjects.get(i);
+
+        ImageView img_indiacator = view.findViewById(R.id.ivGroupIndicator);
+        img_indiacator.setSelected(b);
+
+
         imageView_left.setImageResource(object.getImg_left());
         textView.setText(object.getTitle());
         return view;
@@ -83,6 +88,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
         }
         TextView textView_title = view.findViewById(R.id.item_title);
         TextView textView_note = view.findViewById(R.id.item_note);
+
         ItemObject object = listMap.get(groupObjects.get(i)).get(i1);
 
         textView_title.setText(object.getTitle());

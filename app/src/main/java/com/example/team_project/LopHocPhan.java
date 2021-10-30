@@ -34,7 +34,6 @@ public class LopHocPhan extends AppCompatActivity {
         expandableListView = (ExpandableListView) findViewById(R.id.expand_listview);
         listMap = getListMap();
         groupObjects = new ArrayList<>(listMap.keySet());
-
         adapter = new ExpandableAdapter(groupObjects, listMap);
         expandableListView.setAdapter(adapter);
         ImageView imageView = (ImageView) findViewById(R.id.back_header);
