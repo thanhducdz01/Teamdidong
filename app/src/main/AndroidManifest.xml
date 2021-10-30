@@ -13,10 +13,10 @@
             android:name=".Mic_Login"
             android:exported="true" />
         <activity
-            android:name=".Splash"
+            android:name=".homepage_Activity"
             android:exported="true" />
         <activity
-            android:name=".homepage_Activity"
+            android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
