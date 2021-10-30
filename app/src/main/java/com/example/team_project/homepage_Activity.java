@@ -3,26 +3,19 @@ package com.example.team_project;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 
 
 public class homepage_Activity extends AppCompatActivity {
     ImageButton btn_info_student;
     ImageButton btn_notification;
     ImageButton btn_chatbox;
-    LinearLayout btn_lhp;
-
     void getView() {
         btn_info_student = findViewById(R.id.img_button_student);
         btn_chatbox = findViewById(R.id.img_button_chatbox);
         btn_notification= findViewById(R.id.img_button_notification);
-        btn_lhp = (LinearLayout) findViewById(R.id.btn_lhp);
-
     }
 
     @Override
@@ -56,17 +49,7 @@ public class homepage_Activity extends AppCompatActivity {
             }
         });
 
-        btn_lhp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent   = new Intent(homepage_Activity.this,LopHocPhan.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
-
 
     public void onBackPressed() {
         Intent startMain = new Intent(Intent.ACTION_MAIN);
