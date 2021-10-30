@@ -40,48 +40,14 @@ public class LopHocPhan extends AppCompatActivity {
         adapter = new ExpandableAdapter(groupObjects, listMap);
         expandableListView.setAdapter(adapter);
         ImageView imageView = (ImageView) findViewById(R.id.back_header);
-//        ImageButton btn_info_student =(ImageButton) findViewById(R.id.img_button_student);
-//        ImageButton btn_chatbox = (ImageButton) findViewById(R.id.img_button_chatbox);
-//        ImageButton btn_notification=(ImageButton) findViewById(R.id.img_button_notification);
-//        ImageButton homepage = (ImageButton) findViewById(R.id.img_button_homepage);
         imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
+        @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LopHocPhan.this, homepage_Activity.class);
                 startActivity(intent);
             }
         });
 
-//        btn_info_student.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(LopHocPhan.this, student_information.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        btn_chatbox.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(LopHocPhan.this,chatbox_Activity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        btn_notification.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(LopHocPhan.this,notification_Activity.class);
-//                startActivity(intent);
-//            }
-//        });
-//        homepage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(LopHocPhan.this, homepage_Activity.class);
-//                startActivity(intent);
-//            }
-//        });
 
 
 
