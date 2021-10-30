@@ -31,8 +31,6 @@ public class LopHocPhan extends AppCompatActivity {
         setContentView(R.layout.activity_lop_hoc_phan);
         getSupportActionBar().hide();
 
-
-
         expandableListView = (ExpandableListView) findViewById(R.id.expand_listview);
         listMap = getListMap();
         groupObjects = new ArrayList<>(listMap.keySet());
