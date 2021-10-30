@@ -9,14 +9,17 @@
         <entry key="..\:/OneDrive/Documents/Team_Project/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/OneDrive/Documents/Team_Project/app/src/main/res/layout/activity_mic_login.xml" value="0.2" />
         <entry key="..\:/OneDrive/Documents/Team_Project/app/src/main/res/layout/activity_splash.xml" value="0.2" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/activity_homepage.xml" value="0.371875" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/activity_main.xml" value="0.371875" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/chatbox.xml" value="0.3223958333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/chatbox_details.xml" value="0.3223958333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/infomation_student.xml" value="0.3223958333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/line_chatbox.xml" value="0.3223958333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/notification.xml" value="0.3223958333333333" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Teamdidong/app/src/main/res/layout/notification_details.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/drawable/view_item_daotao.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/activity_homepage.xml" value="0.15" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/activity_lop_hoc_phan.xml" value="0.1" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/activity_lophppage.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/activity_mic_login.xml" value="0.15" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/chatbox.xml" value="0.1" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/chatbox_details.xml" value="0.10052083333333334" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/item_group.xml" value="0.14375" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/layout_item.xml" value="0.14375" />
+        <entry key="..\:/Users/K2001/Desktop/UTE_APP/Teamdidong/app/src/main/res/layout/line_chatbox.xml" value="0.10052083333333334" />
       </map>
     </option>
   </component>
