@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Team_Project">
         <activity
+            android:name=".LopHocPhan"
+            android:exported="true" />
+        <activity
             android:name=".Mic_Login"
             android:exported="true" />
         <activity
@@ -20,13 +23,13 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".chatbox_details_Activity"
             android:exported="true" />
