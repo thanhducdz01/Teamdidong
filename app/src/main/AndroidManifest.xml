@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Team_Project">
         <activity
+            android:name=".Change_Completed"
+            android:exported="true" />
+        <activity
+            android:name=".New_Password"
+            android:exported="true" />
+        <activity
+            android:name=".Forgot"
+            android:exported="true" />
+        <activity
             android:name=".Mic_Login"
             android:exported="true" />
         <activity
@@ -23,7 +32,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

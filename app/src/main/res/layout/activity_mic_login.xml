@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:text="Forgot Password?"
             android:layout_gravity="right"
+            android:id="@+id/forgot"
             android:layout_marginTop="40dp"
             android:textColor="@color/bluebutton"
             android:layout_marginRight="50dp"/>

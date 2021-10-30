@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".Change_Completed">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Đổi Mật Khẩu thành Công!!!"
+        android:textColor="#4CAF50"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp" />
+    <TextView
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="60dp"
+        android:textSize="16dp"
+        android:layout_height="wrap_content"
+        android:text="Vui lòng liên hệ phòng công tác sinh viên để được hỗ trợ chi tiết"
+        android:textColor="@color/black"/>
+    <Button
+        android:id="@+id/btnComplete"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_edit"
+        android:textSize="24dp"
+        android:text="With Office 365"
+        android:textColor="@color/white"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>
