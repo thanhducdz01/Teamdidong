@@ -35,14 +35,14 @@ public class Mic_Login extends AppCompatActivity {
                 backLogin();
             }
         });
-//        btn_Miclogin = findViewById(R.id.btn_micLogin);
-//        btn_Miclogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Mic_Login.this, homepage_Activity.class);
-//                startActivity(intent);
-//            }
-//        });
+        btn_Miclogin = findViewById(R.id.btn_micLogin);
+        btn_Miclogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Mic_Login.this, homepage_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void backLogin(){
         Intent back = new Intent(this, MainActivity.class);

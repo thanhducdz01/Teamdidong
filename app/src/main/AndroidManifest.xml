@@ -25,10 +25,10 @@
             android:name=".Mic_Login"
             android:exported="true" />
         <activity
-            android:name=".Splash"
+            android:name=".LopHocPhan"
             android:exported="true" />
         <activity
-            android:name=".LopHocPhan"
+            android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
