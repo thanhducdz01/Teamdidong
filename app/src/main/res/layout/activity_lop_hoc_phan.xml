@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hoem_page"
+    tools:context=".LopHocPhan"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/background_header">
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:text="LỚP HỌC PHẦN"
+            android:textColor="@color/light_font"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+
+        <ImageButton
+            android:id="@+id/back_header"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back1_left"
+            android:maxHeight="30dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_body"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_below="@+id/layout_header">
+
+        <ExpandableListView
+            android:id="@+id/expand_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="?attr/selectableItemBackgroundBorderless"
+            android:dividerHeight="0dp"
+            android:groupIndicator="@null"
+            android:paddingBottom="10dp"
+            android:scrollbars="none" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_rec"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageButton
+            android:id="@+id/button_homepage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/trangchu"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/button_notification"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/thongbao"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/button_chatbox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/chat"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/button_student"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/student"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+</RelativeLayout>
