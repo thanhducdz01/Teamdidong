@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout change;
+    TextView forgot;
     Button btn_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openMicLogin();
+            }
+        });
+        forgot =  findViewById(R.id.forgot_password);
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Forgot.class);
+                startActivity(intent);
             }
         });
     }

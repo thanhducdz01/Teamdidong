@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Team_Project">
         <activity
+            android:name=".Change_Completed"
+            android:exported="true" />
+        <activity
+            android:name=".New_Password"
+            android:exported="true" />
+      <activity
+            android:name=".Forgot"
+            android:exported="true" />
+        <activity
             android:name=".homepage_Activity"
             android:exported="true" />
         <activity
