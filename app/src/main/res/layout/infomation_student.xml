@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_homepage">
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:background="@drawable/cyan_rec">
+
+        <TextView
+            android:id="@+id/text_info_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="1"
+            android:shadowDy="8"
+            android:shadowRadius="5"
+            android:text="Thông tin sinh viên   "
+            android:textColor="@color/light_font"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_stuname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_student"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Xin chào, Nguyễn Vũ Dũng"
+            android:textColor="@color/light_font"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/text_msv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_stuname"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_regular"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="1"
+            android:shadowDy="7"
+            android:shadowRadius="5"
+            android:text="Mã sinh viên: 1911505310109"
+            android:textColor="@color/light_font"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/text_khoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_msv"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/line"
+            android:fontFamily="@font/roboto_light"
+            android:text="Điện - Điện Tử"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/text_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_msv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@+id/line"
+            android:fontFamily="@font/roboto_light"
+            android:text="Lớp: 19T1"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_msv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/line" />
+
+        <ImageView
+            android:id="@+id/img_student"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/text_info_student"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/user"
+
+            />
+
+        <ImageButton
+            android:id="@+id/btn_logOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/logout" />
+
+    </RelativeLayout>
+
+    <ScrollView
+
+        android:id="@+id/layout_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/layout_header"
+        android:layout_above="@+id/layout_bottom">
+
+        <LinearLayout
+            android:id="@+id/layout_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B3FFFFFF"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/edit_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="ShowPopup"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/img_gmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/gmail" />
+
+                <TextView
+                    android:id="@+id/text_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/img_gmail"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Email"
+                    android:textColor="#867A7A"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/text_cemail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_email"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/img_gmail"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="1911505310109@sv.ute.udn.vn"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <View
+                    android:id="@+id/line_first"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_cemail"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#A39999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/img_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/smartphone" />
+
+                <TextView
+                    android:id="@+id/text_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/img_phone"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Phone"
+                    android:textColor="#867A7A"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/text_cphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_phone"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/img_phone"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="0833444799"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <View
+                    android:id="@+id/line_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_cphone"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#A39999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_addresss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/img_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/home_address" />
+
+                <TextView
+                    android:id="@+id/text_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/img_address"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Address"
+                    android:textColor="#867A7A"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/text_caddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_address"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/img_address"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Thanh Bình - Hải Châu - Đà Nẵng"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <View
+                    android:id="@+id/line_thrd"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_caddress"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#A39999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/img_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/date_birth" />
+
+                <TextView
+                    android:id="@+id/text_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/img_date"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Date of Birth"
+                    android:textColor="#867A7A"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/text_cdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_date"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/img_date"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="03 - 01 - 2001"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <View
+                    android:id="@+id/line_fou"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_cdate"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#A39999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/img_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/date_birth" />
+
+                <TextView
+                    android:id="@+id/text_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/img_sex"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Sex"
+                    android:textColor="#867A7A"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/text_csex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_sex"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/img_sex"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Male"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <View
+                    android:id="@+id/line_fif"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_csex"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#A39999" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_rec"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageButton
+            android:id="@+id/img_button_homepage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/trangchu"
+           >
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/img_button_notification"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/thongbao"
+            >
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/img_button_chatbox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/chat"
+            >
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/img_button_student"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/student"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

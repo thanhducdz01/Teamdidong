@@ -44,6 +44,7 @@
             android:textColor="@color/bluebutton"
             android:layout_marginRight="50dp"/>
         <Button
+            android:id="@+id/btn_login"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="LOGIN"

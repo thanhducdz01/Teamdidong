@@ -15,23 +15,43 @@
         <activity
             android:name=".New_Password"
             android:exported="true" />
-        <activity
+      <activity
             android:name=".Forgot"
             android:exported="true" />
         <activity
+            android:name=".homepage_Activity"
+            android:exported="true" />
+        <activity
             android:name=".Mic_Login"
+            android:exported="true" />
+        <activity
+            android:name=".LopHocPhan"
             android:exported="true" />
         <activity
             android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".chatbox_details_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".notification_details_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".chatbox_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".notification_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".student_information"
             android:exported="true" />
     </application>
 
