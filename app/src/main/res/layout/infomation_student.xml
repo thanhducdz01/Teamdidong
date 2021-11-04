@@ -65,8 +65,7 @@
             android:fontFamily="@font/roboto_light"
             android:text="Điện - Điện Tử"
             android:textColor="@color/white"
-            android:textSize="15dp"
-            />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/text_class"
@@ -76,10 +75,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="25dp"
             android:layout_toRightOf="@+id/line"
+            android:fontFamily="@font/roboto_light"
             android:text="Lớp: 19T1"
             android:textColor="@color/white"
-            android:textSize="15dp"
-            android:fontFamily="@font/roboto_light"/>
+            android:textSize="15dp" />
 
         <ImageView
             android:id="@+id/line"
@@ -104,6 +103,7 @@
             />
 
         <ImageButton
+            android:id="@+id/btn_logOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -140,11 +140,13 @@
                 android:layout_weight="1">
 
                 <ImageButton
+                    android:id="@+id/edit_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="30dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="ShowPopup"
                     android:src="@drawable/edit" />
 
                 <ImageView
@@ -195,6 +197,8 @@
                 android:layout_weight="1">
 
                 <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -250,6 +254,8 @@
                 android:layout_weight="1">
 
                 <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_addresss"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -305,6 +311,8 @@
                 android:layout_weight="1">
 
                 <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -360,6 +368,8 @@
                 android:layout_weight="1">
 
                 <ImageButton
+                    android:onClick="ShowPopup"
+                    android:id="@+id/edit_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"

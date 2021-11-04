@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Team_Project</string>
+    <string name="edittext_hint"><font size="12">Điền thông tin mới</font></string>
 </resources>
