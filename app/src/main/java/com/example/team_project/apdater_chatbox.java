@@ -40,7 +40,7 @@ public class apdater_chatbox extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(layout,null);
-        TextView textTen = view.findViewById(R.id.text_name);
+        TextView textTen = view.findViewById(R.id.user_name);
         TextView textNoiDung = view.findViewById(R.id.text_noidung);
         ImageView textHinh = view.findViewById(R.id.img_student);
 
