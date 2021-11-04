@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_homepage"
     tools:context=".homepage_Activity">
+
     <RelativeLayout
+        android:layout_centerHorizontal="true"
         android:id="@+id/layout_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,13 +62,13 @@
         android:id="@+id/text_thongbao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/layout_header"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Thông báo" />
+        android:fontFamily="@font/nunito_bold"
+        android:text="Thông báo"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
 
     <ScrollView
         android:id="@+id/layout_scroll_body"
@@ -464,7 +466,7 @@
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rec_cardview">
 
@@ -692,7 +694,7 @@
 
     <LinearLayout
         android:id="@+id/layout_bottom"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bottom_rec"

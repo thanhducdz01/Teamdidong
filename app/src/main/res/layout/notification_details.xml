@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_homepage"
     tools:context=".MainActivity">
+
     <RelativeLayout
         android:id="@+id/layout_header"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/head_rectangle">
 
         <TextView
@@ -67,24 +69,26 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:src="@drawable/previous" />
+
     <RelativeLayout
+        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
         android:layout_below="@+id/btn_back"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rec_cardview_detail">
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cập nhật phiên bản"
-            android:fontFamily="@font/nunito_bold"
-            android:textColor="@color/black"
-            android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            />
+            android:fontFamily="@font/nunito_bold"
+            android:text="Cập nhật phiên bản"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,18 +104,19 @@ Cập nhật thêm chức năng mới"
 
 
             />
+
         <TextView
             android:id="@+id/day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10/10/2021"
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="10/10/2021"
+            android:textColor="@color/black"
+            android:textSize="15dp"
 
             />
 
@@ -120,7 +125,7 @@ Cập nhật thêm chức năng mới"
 
     <LinearLayout
         android:id="@+id/layout_bottom"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bottom_rec"

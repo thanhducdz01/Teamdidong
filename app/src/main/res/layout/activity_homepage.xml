@@ -9,8 +9,9 @@
 
     <RelativeLayout
         android:id="@+id/layout_header"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/head_rectangle">
 
         <TextView
@@ -281,7 +282,7 @@
 
     <LinearLayout
         android:id="@+id/layout_bottom"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bottom_rec"
