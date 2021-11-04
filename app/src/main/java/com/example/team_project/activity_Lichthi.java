@@ -1,5 +1,7 @@
 package com.example.team_project;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,12 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Lichthi extends AppCompatActivity {
+public class activity_Lichthi extends AppCompatActivity {
+
     Spinner spinner1;
     ImageButton back_header;
     @Override
@@ -28,7 +29,7 @@ public class Lichthi extends AppCompatActivity {
         back_header.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Lichthi.this, homepage_Activity.class);
+                Intent intent = new Intent(activity_Lichthi.this, homepage_Activity.class);
                 startActivity(intent);
             }
         });

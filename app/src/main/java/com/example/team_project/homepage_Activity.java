@@ -76,14 +76,14 @@ public class homepage_Activity extends AppCompatActivity {
         btn_lichthi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(homepage_Activity.this, Lichthi.class);
+                Intent intent = new Intent(homepage_Activity.this, activity_Lichthi.class);
                 startActivity(intent);
             }
         });
         btn_ketqua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(homepage_Activity.this, Ketqua.class);
+                Intent intent = new Intent(homepage_Activity.this, activity_ketqua.class);
                 startActivity(intent);
             }
         });

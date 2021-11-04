@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Team_Project">
         <activity
+            android:name=".activity_Lichthi"
+            android:exported="true" />
+        <activity
+            android:name=".activity_ketqua"
+            android:exported="true" />
+        <activity
             android:name=".tkbieu_Activity"
             android:exported="true" />
         <activity

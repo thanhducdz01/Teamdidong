@@ -1,5 +1,7 @@
 package com.example.team_project;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,15 +10,12 @@ import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-
-public class Ketqua extends AppCompatActivity {
+public class activity_ketqua extends AppCompatActivity {
 
     Spinner spinner1;
     Spinner spinner2;
@@ -61,7 +60,7 @@ public class Ketqua extends AppCompatActivity {
         back_header.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Ketqua.this, homepage_Activity.class);
+                Intent intent = new Intent(activity_ketqua.this, homepage_Activity.class);
                 startActivity(intent);
             }
         });
