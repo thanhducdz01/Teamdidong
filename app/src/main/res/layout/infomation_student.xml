@@ -368,13 +368,13 @@
                 android:layout_weight="1">
 
                 <ImageButton
-                    android:onClick="ShowPopup"
                     android:id="@+id/edit_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="30dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="ShowPopup"
                     android:src="@drawable/edit" />
 
                 <ImageView
@@ -385,21 +385,22 @@
                     android:src="@drawable/date_birth" />
 
                 <TextView
-                    android:id="@+id/text_sex"
+
+                    android:id="@+id/text_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/img_sex"
                     android:fontFamily="@font/roboto_regular"
-                    android:text="Sex"
+                    android:text="Gender"
                     android:textColor="#867A7A"
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/text_csex"
+                    android:id="@+id/text_cgender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_sex"
+                    android:layout_below="@+id/text_gender"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
                     android:layout_toRightOf="@+id/img_sex"
@@ -412,7 +413,7 @@
                     android:id="@+id/line_fif"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/text_csex"
+                    android:layout_below="@+id/text_cgender"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="30dp"
                     android:background="#A39999" />
