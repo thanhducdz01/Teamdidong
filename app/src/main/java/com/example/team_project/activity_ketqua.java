@@ -23,7 +23,9 @@ public class activity_ketqua extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_ketqua);
+
         back_header = (ImageButton) findViewById(R.id.back_header);
         spinner1 = findViewById(R.id.spinner1);
         String [] value ={" Năm học 2020-2021"," Năm học 2019-2020"," Năm học 2018-2019"};

@@ -19,6 +19,7 @@ public class activity_Lichthi extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_lichthi);
         spinner1 = findViewById(R.id.spinner1);
         back_header = (ImageButton) findViewById(R.id.back_header);
