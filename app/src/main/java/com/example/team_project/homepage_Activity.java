@@ -69,7 +69,7 @@ public class homepage_Activity extends AppCompatActivity {
         btn_tkb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(homepage_Activity.this, tkb.class);
+                Intent intent = new Intent(homepage_Activity.this, tkbieu_Activity.class);
                 startActivity(intent);
             }
         });
