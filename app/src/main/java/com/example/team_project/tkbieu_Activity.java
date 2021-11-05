@@ -15,6 +15,7 @@ public class tkbieu_Activity extends AppCompatActivity {
     RelativeLayout btn_t2,btn_t3,btn_t4;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getSupportActionBar().hide();
         setContentView(R.layout.activity_tkb);
         ImageView imageView = (ImageView) findViewById(R.id.back_header);
@@ -33,7 +34,11 @@ public class tkbieu_Activity extends AppCompatActivity {
         btn_t2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 replaceFragment(new tkb_t2());
+                btn_t2.setBackgroundColor(1);
+                btn_t3.setBackgroundResource(R.drawable.boderday);
+                btn_t4.setBackgroundResource(R.drawable.boderday);
             }
         });
 
@@ -41,6 +46,9 @@ public class tkbieu_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 replaceFragment(new tkb_t3());
+                btn_t3.setBackgroundColor(1);
+                btn_t2.setBackgroundResource(R.drawable.boderday);
+                btn_t4.setBackgroundResource(R.drawable.boderday);
             }
         });
 
@@ -48,6 +56,9 @@ public class tkbieu_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 replaceFragment(new tkb_t4());
+                btn_t4.setBackgroundColor(1);
+                btn_t2.setBackgroundResource(R.drawable.boderday);
+                btn_t3.setBackgroundResource(R.drawable.boderday);
             }
         });
     }
@@ -55,6 +66,7 @@ public class tkbieu_Activity extends AppCompatActivity {
     private  void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_in_left);
         fragmentTransaction.replace(R.id.fragment_layout,fragment);
         fragmentTransaction.commit();
     }
