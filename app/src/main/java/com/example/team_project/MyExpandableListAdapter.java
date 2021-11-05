@@ -57,7 +57,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         if(convertView == null)
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.expandable_list_group,parent,false);
-        TextView textView= convertView.findViewById(R.id.textview);
+        TextView textView= convertView.findViewById(R.id.name_subject);
         textView.setText(String.valueOf(getGroup(groupPosition)));
         return convertView;
     }
@@ -66,7 +66,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition,int childPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         if(convertView == null)
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.expandable_list_group,parent,false);
-        TextView textView= convertView.findViewById(R.id.textview);
+        TextView textView= convertView.findViewById(R.id.name_subject);
         textView.setText(String.valueOf(getChild(groupPosition,childPosition)));
         return convertView;
     }
