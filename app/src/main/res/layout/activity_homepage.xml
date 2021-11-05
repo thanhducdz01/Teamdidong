@@ -9,8 +9,9 @@
 
     <RelativeLayout
         android:id="@+id/layout_header"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/head_rectangle">
 
         <TextView
@@ -173,6 +174,7 @@
                 app:cardElevation="8dp">
 
                 <LinearLayout
+                    android:id="@+id/btn_tkb"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
@@ -212,6 +214,7 @@
                 app:cardElevation="10dp">
 
                 <LinearLayout
+                    android:id="@+id/btn_ketqua"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
@@ -251,6 +254,7 @@
                 app:cardElevation="10dp">
 
                 <LinearLayout
+                    android:id="@+id/btn_lichthi"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
@@ -278,7 +282,7 @@
 
     <LinearLayout
         android:id="@+id/layout_bottom"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bottom_rec"

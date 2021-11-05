@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 
 public class homepage_Activity extends AppCompatActivity {
@@ -15,11 +16,18 @@ public class homepage_Activity extends AppCompatActivity {
     ImageButton btn_notification;
     ImageButton btn_chatbox;
     LinearLayout btn_lhp;
+    LinearLayout btn_tkb;
+    LinearLayout btn_lichthi;
+    LinearLayout btn_ketqua;
+
     void getView() {
         btn_info_student = findViewById(R.id.img_button_student);
         btn_chatbox = findViewById(R.id.img_button_chatbox);
         btn_notification= findViewById(R.id.img_button_notification);
         btn_lhp = findViewById(R.id.btn_lhp);
+        btn_tkb =findViewById(R.id.btn_tkb);
+        btn_lichthi = findViewById(R.id.btn_lichthi);
+        btn_ketqua = findViewById(R.id.btn_ketqua);
     }
 
     @Override
@@ -58,6 +66,27 @@ public class homepage_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(homepage_Activity.this, LopHocPhan.class);
+                startActivity(intent);
+            }
+        });
+        btn_tkb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homepage_Activity.this, tkbieu_Activity.class);
+                startActivity(intent);
+            }
+        });
+        btn_lichthi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homepage_Activity.this, activity_Lichthi.class);
+                startActivity(intent);
+            }
+        });
+        btn_ketqua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homepage_Activity.this, activity_ketqua.class);
                 startActivity(intent);
             }
         });

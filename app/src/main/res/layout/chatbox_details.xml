@@ -9,6 +9,7 @@
 
     <RelativeLayout
         android:id="@+id/layout_header"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/head_rectangle">
@@ -66,7 +67,7 @@
 
         <RelativeLayout
             android:id="@+id/layout_name_chatbox"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
@@ -167,7 +168,7 @@
 
     <LinearLayout
         android:id="@+id/layout_bottom"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bottom_rec"
