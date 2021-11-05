@@ -97,6 +97,7 @@
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
+                    android:id="@+id/btn_noti_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rec_cardview">
@@ -144,6 +145,7 @@
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
+                    android:id="@+id/btn_class_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rec_cardview">
@@ -190,11 +192,13 @@
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
+                    android:id="@+id/btn_pdt_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rec_cardview">
 
                     <ImageView
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
