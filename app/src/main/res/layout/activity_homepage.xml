@@ -95,13 +95,13 @@
 
             <TextView
                 android:id="@+id/textview_information"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="115dp"
+                android:layout_height="70dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toEndOf="@+id/textview_content"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Nguyễn Vũ Dũng \n1911505310109\n19T1\nĐiện - Điện tử"
+                android:text="Dũng \n1911505310109\n19T1\nĐiện - Điện tử"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
