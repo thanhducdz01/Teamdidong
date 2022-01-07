@@ -197,13 +197,13 @@
                 android:layout_weight="1">
 
                 <ImageButton
-                    android:onClick="ShowPopup"
                     android:id="@+id/edit_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="30dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="ShowPopup"
                     android:src="@drawable/edit" />
 
                 <ImageView
