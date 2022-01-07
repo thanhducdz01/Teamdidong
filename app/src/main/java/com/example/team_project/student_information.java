@@ -47,10 +47,11 @@ public class student_information extends AppCompatActivity {
 
     DatePickerDialog datePickerDialog;
     Button dateButton;
-    ImageButton homepage,btn_chatbox,btn_notification,btn_logOut;
+    ImageButton homepage,btn_chatbox,btn_notification,btn_logOut,btn_changePassword;
     Dialog popupStudent_Dialog;
     TextView stuname,txt_msv,txt_khoa,txtlop,edtEmail,edtPhone,edtAddress,edtDate,edtGender;
     ImageButton btn_email,btn_phone,btn_add,btn_date,btn_gender;
+    static String oldpas;
     private static final String URLgetProfile= "http://192.168.0.103/UTEapp/getProfile.php";
     private static final String URLupdateProfile= "http://192.168.0.103/UTEapp/updateInfo.php";
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -65,6 +66,7 @@ public class student_information extends AppCompatActivity {
         btn_add = findViewById(R.id.edit_addresss);
         btn_date = findViewById(R.id.edit_date);
         btn_gender = findViewById(R.id.edit_sex);
+        btn_changePassword =findViewById(R.id.btn_changePassword);
     }
 
     @Override
@@ -88,6 +90,7 @@ public class student_information extends AppCompatActivity {
             }
         });
 
+
         btn_chatbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +112,13 @@ public class student_information extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(student_information.this,MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btn_changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialogChangePassword(Gravity.CENTER);
             }
         });
 
@@ -146,6 +156,70 @@ public class student_information extends AppCompatActivity {
             }
         });
     }
+
+    private void openDialogChangePassword(int gravity) {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.popup_changepassword);
+        Window window = dialog.getWindow();
+        if (window == null){
+            return;
+        }
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        WindowManager.LayoutParams winAttributes = window.getAttributes();
+        window.setAttributes(winAttributes);
+        if (Gravity.BOTTOM == gravity){
+            dialog.setCancelable(true);
+        }else{
+            dialog.setCancelable(false);
+        }
+        Button btn_submitChange, btn_closeChange;
+        EditText editText_newPassword,editText_RenewPassword,editText_oldPassword;
+        editText_newPassword = dialog.findViewById(R.id.edt_newpassword);
+        editText_RenewPassword = dialog.findViewById(R.id.edt_renewpassword);
+        editText_oldPassword = dialog.findViewById(R.id.edt_oldpassword);
+        btn_submitChange =  dialog.findViewById(R.id.btn_submitChange);
+        btn_closeChange = dialog.findViewById(R.id.btn_closeChange);
+
+
+        btn_closeChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        btn_submitChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!editText_oldPassword.getText().toString().equals(oldpas)){
+                    Toast.makeText(getApplicationContext(), "Mật khẩu cũ không chính xác", Toast.LENGTH_SHORT).show();
+                }else{
+                    String matKhau = editText_newPassword.getText().toString();
+                    String reMatKhau = editText_RenewPassword.getText().toString();
+                    matKhau.trim();
+                    reMatKhau.trim();
+                    System.out.println(matKhau+reMatKhau);
+                    if(!matKhau.equals(reMatKhau) && !reMatKhau.equals("")){
+                        Toast.makeText(getApplicationContext(), "Mật khẩu Nhập lại không khớp", Toast.LENGTH_SHORT).show();
+                    }else if(!matKhau.matches("\\S+")){
+                        Toast.makeText(getApplicationContext(), "Mật khẩu không được có Khoảng trắng", Toast.LENGTH_SHORT).show();
+                    }else if(matKhau.equals("")){
+                        Toast.makeText(getApplicationContext(), "Mật khẩu không được rỗng", Toast.LENGTH_SHORT).show();
+                    }else{
+                        updateProfile("changepas",matKhau);
+                        Toast.makeText(getApplicationContext(), "ĐỔI MẬT KHẨU THÀNH CÔNG !", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                }
+
+
+
+            }
+        });
+        dialog.show();
+    }
+
 
     private List<Category> getListCategory(){
         List<Category> list = new ArrayList<>();
@@ -290,7 +364,7 @@ public class student_information extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     if (response.equals("success")){
-                        Toast.makeText(getApplicationContext(),"Update Thành Công",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"UPDATE THÀNH CÔNG",Toast.LENGTH_SHORT).show();
                         AddProfile();
                     }else if(response.equals("exists")){
                         Toast.makeText(getApplicationContext(),"Đã tồn tại dữ liệu",Toast.LENGTH_SHORT).show();
@@ -317,6 +391,9 @@ public class student_information extends AppCompatActivity {
                         pr.put("gender",value);
                     }else if (content.equals("date")){
                         pr.put("date",value);
+                    }else if (content.equals("changepas")){
+                        System.out.println("LALALALAALAL ----- "+value);
+                        pr.put("oldpas",value);
                     }
                     return pr;
                 }
@@ -372,6 +449,7 @@ public class student_information extends AppCompatActivity {
                             edtAddress.setText(diaChi);
                             edtDate.setText(ngaySinh);
                             edtGender.setText(gioiTinh);
+                            oldpas = matKhauTK;
 
                         }
                     }
