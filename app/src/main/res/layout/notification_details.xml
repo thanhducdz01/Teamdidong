@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_homepage"
-    tools:context=".MainActivity">
+    tools:context=".notification_details_Activity">
 
     <RelativeLayout
         android:id="@+id/layout_header"
@@ -71,10 +71,10 @@
         android:src="@drawable/previous" />
 
     <RelativeLayout
-        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_below="@+id/btn_back"
+        android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/rec_cardview_detail">

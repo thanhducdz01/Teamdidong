@@ -30,6 +30,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -81,6 +84,10 @@ public class student_information extends AppCompatActivity {
         AddProfile();
         Intent intentget = getIntent();
         String maSV = intentget.getStringExtra("maSV");
+        String tokenUser = intentget.getStringExtra("tokenUser");
+        String docID = intentget.getStringExtra("DocumentId");
+
+
         homepage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,8 +117,7 @@ public class student_information extends AppCompatActivity {
         btn_logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(student_information.this,MainActivity.class);
-                startActivity(intent);
+                signOut();
             }
         });
 
@@ -156,7 +162,26 @@ public class student_information extends AppCompatActivity {
             }
         });
     }
+    private  void  signOut(){
+        Intent intentget = getIntent();
+        String maSV = intentget.getStringExtra("maSV");
+        String tokenUser = intentget.getStringExtra("tokenUser");
+        String DocumentID = intentget.getStringExtra("DocumentId");
+        System.out.println("TOKENNNNNNNNNNNN: "+tokenUser);
+        System.out.println("DOCUMENTTTTTTT: "+DocumentID);
 
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = firestore.collection("Users").document(DocumentID);
+
+        HashMap<String, Object> updates = new HashMap<>();
+        updates.put("token", FieldValue.delete());
+        documentReference.update(updates)
+                .addOnSuccessListener(unused -> {
+                    finishAffinity();
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                });
+
+    }
     private void openDialogChangePassword(int gravity) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

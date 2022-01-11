@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 public class chatbox_Activity extends AppCompatActivity {
@@ -17,10 +19,12 @@ public class chatbox_Activity extends AppCompatActivity {
     ArrayList<chatbox_info> arrChatbox;
     apdater_chatbox adapter;
     ImageButton homepage,btn_notification,btn_studentInfo;
+    FloatingActionButton newChat;
     void getView() {
         homepage = findViewById(R.id.img_button_homepage);
         btn_notification = findViewById(R.id.img_button_notification);
         btn_studentInfo= findViewById(R.id.img_button_student);
+        newChat =findViewById(R.id.newChat);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,21 @@ public class chatbox_Activity extends AppCompatActivity {
         adapter = new apdater_chatbox(this, R.layout.line_chatbox, arrChatbox);
         lvStudent.setAdapter(adapter);
         getView();
+        Intent intentget = getIntent();
+        String maSV = intentget.getStringExtra("maSV");
+        String DocID = intentget.getStringExtra("DocumentId");
+        System.out.println("DOC CU MEN NHANH DC: "+DocID);
+        newChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(chatbox_Activity.this, userList.class);
+                intent.putExtra("maSV",maSV);
+                intent.putExtra("DocumentId",DocID);
+                startActivity(intent);
+
+
+            }
+        });
 
         lvStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

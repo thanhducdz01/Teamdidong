@@ -5,6 +5,7 @@ public class message_model {
     private String receiver;
     private String message;
 
+
     public message_model(String sender, String receiver, String message) {
         this.sender = sender;
         this.receiver = receiver;

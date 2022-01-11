@@ -20,6 +20,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +59,8 @@ public class homepage_Activity extends AppCompatActivity {
     LinearLayout btn_ketqua;
     TextView txtInfo;
     String maSV="1911505310109";
+    static String DocumentID,tokenUser;
+    static String studentName;
     private static final String URLgetProfile= "http://192.168.0.103/UTEapp/getProfile.php";
 
     void getView() {
@@ -76,14 +88,21 @@ public class homepage_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(homepage_Activity.this, student_information.class);
                 intent.putExtra("maSV",maSV);
+                intent.putExtra("DocumentId",DocumentID);
+                System.out.println("ALEEEEEEEEEALEEEEEEEEE -- "+DocumentID);
+                intent.putExtra("tokenUser",tokenUser);
                 startActivity(intent);
             }
         });
+
 
         btn_chatbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(homepage_Activity.this,chatbox_Activity.class);
+                intent.putExtra("maSV",maSV);
+                intent.putExtra("DocumentId",DocumentID);
+                System.out.println("DASKDJASLKDJALSKDJLKAS -- "+DocumentID);
                 startActivity(intent);
             }
         });
@@ -125,6 +144,73 @@ public class homepage_Activity extends AppCompatActivity {
         });
     }
 
+    private void InsertInformationToFirebase(){
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        HashMap<String,Object> user = new HashMap<>();
+        user.put("maSV",maSV);
+        user.put("tenSV",studentName);
+        firestore.collection("Users")
+                .add(user)
+                .addOnSuccessListener(documentReference -> {
+                    DocumentID = documentReference.getId();
+                    getToken();
+                })
+                .addOnFailureListener(exception -> {
+
+                });
+    }
+    private void alreadyExists(final String maSV) {
+
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        CollectionReference cref=firestore.collection("Users");
+        Query q1=cref.whereEqualTo("maSV",maSV);
+        q1.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                boolean isExisting = false;
+                String docID="null";
+                for (DocumentSnapshot ds : queryDocumentSnapshots) {
+                    String maSVcheck;
+                    maSVcheck = ds.getString("maSV");
+                    if (maSVcheck.equals(maSV)) {
+                            isExisting = true;
+                         docID = ds.getId();
+                    }
+                }
+                if (!isExisting) {
+                    InsertInformationToFirebase();
+                }else{
+                   DocumentID =docID;
+                   getToken();
+                }
+            }
+        });
+    }
+
+    private void getToken(){
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);
+    }
+
+    private void updateToken(String token){
+        tokenUser = token;
+        System.out.println("A________A_____: "+tokenUser);
+        System.out.println("C________C_____: "+DocumentID);
+
+
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = firestore.collection("Users").document(DocumentID);
+        documentReference.update("token",token)
+                .addOnSuccessListener(ocumentReference -> {
+                })
+                .addOnFailureListener(exception -> {
+
+                });
+    }
+
+
+
+
+
     private void AddSimpleProfile(){
         StringRequest request = new StringRequest(Request.Method.POST, URLgetProfile, new Response.Listener<String>() {
             @Override
@@ -150,7 +236,9 @@ public class homepage_Activity extends AppCompatActivity {
                             String matKhauEMAIL = object.getString("matKhauEMAIL");
                             txtInfo = findViewById(R.id.textview_information);
                             txtInfo.setText(tenSV+"\n"+maSV+"\n"+tenLop+"\n"+tenKhoa);
-
+                            studentName = tenSV;
+                            System.out.println("KAKAKAKKA -------"+studentName);
+                            alreadyExists(maSV);
                         }
                     }
                 } catch (JSONException e) {
@@ -180,6 +268,8 @@ public class homepage_Activity extends AppCompatActivity {
         startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(startMain);
     }
+
+
     /**
      * Enables https connections
      */

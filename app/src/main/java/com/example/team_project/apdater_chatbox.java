@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class apdater_chatbox extends BaseAdapter {
@@ -20,6 +22,7 @@ public class apdater_chatbox extends BaseAdapter {
         this.layout = layout;
         this.chatbox_infoList = chatbox;
     }
+
 
     @Override
     public int getCount() {

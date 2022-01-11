@@ -12,16 +12,34 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class chatbox_details_Activity extends AppCompatActivity {
     ImageButton btn_Chatbox_back,btn_send;
     MessageApdapter adapter;
     RecyclerView message_content;
     List<message_model> listText;
+    List<ChatMessage> chatMessages;
+    private MessageApdapter messageApdapter;
+    private FirebaseFirestore database;
     EditText textsend;
+    User receiveUser;
+    TextView txtStudenname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,40 +48,125 @@ public class chatbox_details_Activity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
         getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.chatbox_details);
+        loadReceiverUser();
+        init();
+        listenMessages();
         btn_Chatbox_back = findViewById(R.id.btn_back_chatbox);
         btn_Chatbox_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(chatbox_details_Activity.this,chatbox_Activity.class);
-                startActivity(intent);
+                finish();
+//                Intent intent = new Intent(chatbox_details_Activity.this,chatbox_Activity.class);
+//                startActivity(intent);
             }
         });
 
-        message_content = findViewById(R.id.message_content);
-        message_content.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        linearLayoutManager.setStackFromEnd(true);
-        message_content.setLayoutManager(linearLayoutManager);
+//        message_content = findViewById(R.id.message_content);
+//        message_content.setHasFixedSize(true);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+//        linearLayoutManager.setStackFromEnd(true);
+//        message_content.setLayoutManager(linearLayoutManager);
         textsend = findViewById(R.id.edittext_send);
         btn_send = findViewById(R.id.btn_send);
         listText = new ArrayList<>();
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AnhXa();
                 String msg = textsend.getText().toString();
                 if (!msg.equals("")){
-                    adapter = new MessageApdapter(chatbox_details_Activity.this,listText);
-                    message_content.setAdapter(adapter);
+                        sendMessage();
                 }
-                textsend.setText("");
             }
         });
 
     }
-    private void  AnhXa(){
+
+    private void   listenMessages(){
+        Intent intentget = getIntent();
+        receiveUser = (User) intentget.getSerializableExtra("Username");
+        String docID = intentget.getStringExtra("DocumentId");
+        database.collection("Chat")
+                .whereEqualTo("senderID",docID)
+                .whereEqualTo("receiveID",receiveUser.id)
+                .addSnapshotListener(eventListener);
+        database.collection("Chat")
+                .whereEqualTo("senderID",receiveUser.id)
+                .whereEqualTo("receiveID",docID)
+                .addSnapshotListener(eventListener);
+    }
+
+    private final EventListener<QuerySnapshot> eventListener = (value, error) ->{
+        Intent intentget = getIntent();
+        receiveUser = (User) intentget.getSerializableExtra("Username");
+        String docID = intentget.getStringExtra("DocumentId");
+        if(error != null){
+            return;
+        }
+        if (value !=null){
+            int count = chatMessages.size();
+            for (DocumentChange documentChange :value.getDocumentChanges()){
+                if (documentChange.getType() == DocumentChange.Type.ADDED){
+                    ChatMessage chatMessage = new ChatMessage();
+                    chatMessage.senderId = documentChange.getDocument().getString("senderID");
+                    chatMessage.receiverID = documentChange.getDocument().getString("receiveID");
+                    chatMessage.message = documentChange.getDocument().getString("Message");
+                    chatMessage.dateTime = getReaderableTime(documentChange.getDocument().getDate("Time"));
+                    chatMessage.dateObject =documentChange.getDocument().getDate("Time");
+                    chatMessages.add(chatMessage);
+                }
+            }
+
+            Collections.sort(chatMessages,(obj1, obj2) -> obj1.dateObject.compareTo(obj2.dateObject));
+            if (count == 0){
+                messageApdapter.notifyDataSetChanged();
+            }else{
+                messageApdapter.notifyItemRangeInserted(chatMessages.size(), chatMessages.size());
+
+
+            }
+            message_content = findViewById(R.id.message_content);
+            message_content.setVisibility(View.VISIBLE);
+        }
+
+    };
+
+    private void   init(){
+        Intent intentget = getIntent();
+        receiveUser = (User) intentget.getSerializableExtra("Username");
+        String maSV = intentget.getStringExtra("maSV");
+        String docID = intentget.getStringExtra("DocumentId");
+        chatMessages = new ArrayList<>();
+        messageApdapter = new MessageApdapter(
+                chatMessages,docID
+        );
+        message_content = findViewById(R.id.message_content);
+        message_content.setAdapter(messageApdapter);
+        database = FirebaseFirestore.getInstance();
+    }
+
+    private void sendMessage(){
+        Intent intentget = getIntent();
+        receiveUser = (User) intentget.getSerializableExtra("Username");
+        String docID = intentget.getStringExtra("DocumentId");
         String msg = textsend.getText().toString();
-        listText.add(new message_model("Nguyễn Vũ Dũng","Lê Thành Đức",msg));
+        HashMap<String, Object> message = new HashMap<>();
+        message.put("senderID",docID);
+        message.put("receiveID",receiveUser.id);
+        message.put("Message",msg);
+        message.put("Time",new Date());
+        database.collection("Chat").add(message);
+        textsend.setText(null);
+    }
+
+    private  void loadReceiverUser(){
+        Intent intentget = getIntent();
+        receiveUser = (User) intentget.getSerializableExtra("Username");
+        txtStudenname = findViewById(R.id.textview_nameStudent);
+        txtStudenname.setText(receiveUser.name);
+    }
+
+    private String getReaderableTime(Date date){
+        return new SimpleDateFormat("dd mm yyyy,- hh:mm a", Locale.getDefault()).format(date);
     }
 
 }
