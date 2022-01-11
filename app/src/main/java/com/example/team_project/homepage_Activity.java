@@ -9,7 +9,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +19,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.team_project.ChatModule.chatbox_Activity;
+import com.example.team_project.NotificationModule.notification_Activity;
+import com.example.team_project.StudentProfileModule.student_information;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -34,7 +34,6 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
@@ -99,8 +98,9 @@ public class homepage_Activity extends AppCompatActivity {
         btn_chatbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(homepage_Activity.this,chatbox_Activity.class);
+                Intent intent = new Intent(homepage_Activity.this, chatbox_Activity.class);
                 intent.putExtra("maSV",maSV);
+                intent.putExtra("tenSV",studentName);
                 intent.putExtra("DocumentId",DocumentID);
                 System.out.println("DASKDJASLKDJALSKDJLKAS -- "+DocumentID);
                 startActivity(intent);
@@ -110,7 +110,7 @@ public class homepage_Activity extends AppCompatActivity {
         btn_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(homepage_Activity.this,notification_Activity.class);
+                Intent intent = new Intent(homepage_Activity.this, notification_Activity.class);
                 startActivity(intent);
             }
         });

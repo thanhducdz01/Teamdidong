@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.StudentProfileModule;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.team_project.R;
 
 import java.util.List;
 

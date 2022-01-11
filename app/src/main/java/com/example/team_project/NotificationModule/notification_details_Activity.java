@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.NotificationModule;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+
+import com.example.team_project.R;
 
 public class notification_details_Activity extends AppCompatActivity {
 

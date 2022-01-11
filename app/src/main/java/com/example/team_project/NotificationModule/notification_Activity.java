@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.NotificationModule;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,11 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.example.team_project.ChatModule.chatbox_Activity;
+import com.example.team_project.R;
+import com.example.team_project.StudentProfileModule.student_information;
+import com.example.team_project.homepage_Activity;
 
 public class notification_Activity extends AppCompatActivity {
     ImageButton homepage,btn_chatbox,btn_studentInfo;
@@ -79,7 +84,7 @@ public class notification_Activity extends AppCompatActivity {
         btn_chatbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(notification_Activity.this,chatbox_Activity.class);
+                Intent intent = new Intent(notification_Activity.this, chatbox_Activity.class);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.StudentProfileModule;
 
 public class Category {
     private String gender;

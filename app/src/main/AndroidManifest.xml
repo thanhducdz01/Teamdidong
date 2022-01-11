@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Team_Project"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".userList"
+            android:name=".ChatModule.userList"
             android:exported="true" />
         <activity
             android:name=".activity_Lichthi"
@@ -64,20 +64,20 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".chatbox_details_Activity"
+            android:name=".ChatModule.chatbox_details_Activity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".notification_details_Activity"
+            android:name=".NotificationModule.notification_details_Activity"
             android:exported="true" />
         <activity
-            android:name=".chatbox_Activity"
+            android:name=".ChatModule.chatbox_Activity"
             android:exported="true" />
         <activity
-            android:name=".notification_Activity"
+            android:name=".NotificationModule.notification_Activity"
             android:exported="true" />
         <activity
-            android:name=".student_information"
+            android:name=".StudentProfileModule.student_information"
             android:exported="true" />
     </application>
 

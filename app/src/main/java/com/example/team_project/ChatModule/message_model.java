@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.ChatModule;
 
 public class message_model {
     private String sender;

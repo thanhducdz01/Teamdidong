@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.StudentProfileModule;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -30,6 +30,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.team_project.ChatModule.chatbox_Activity;
+import com.example.team_project.MainActivity;
+import com.example.team_project.R;
+import com.example.team_project.homepage_Activity;
+import com.example.team_project.NotificationModule.notification_Activity;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -91,7 +96,7 @@ public class student_information extends AppCompatActivity {
         homepage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(student_information.this,homepage_Activity.class);
+                Intent intent = new Intent(student_information.this, homepage_Activity.class);
                 startActivity(intent);
                 finish();
             }
@@ -101,7 +106,7 @@ public class student_information extends AppCompatActivity {
         btn_chatbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(student_information.this,chatbox_Activity.class);
+                Intent intent = new Intent(student_information.this, chatbox_Activity.class);
                 startActivity(intent);
             }
         });
@@ -109,7 +114,7 @@ public class student_information extends AppCompatActivity {
         btn_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(student_information.this,notification_Activity.class);
+                Intent intent = new Intent(student_information.this, notification_Activity.class);
                 startActivity(intent);
             }
         });
@@ -178,7 +183,7 @@ public class student_information extends AppCompatActivity {
         documentReference.update(updates)
                 .addOnSuccessListener(unused -> {
                     finishAffinity();
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 });
 
     }

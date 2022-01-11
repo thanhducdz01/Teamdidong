@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.ChatModule;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.example.team_project.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -74,8 +75,10 @@ public class userList extends AppCompatActivity  implements  UserListener{
         Intent intentget = getIntent();
         String maSV = intentget.getStringExtra("maSV");
         String docID = intentget.getStringExtra("DocumentId");
+        String tenSV = intentget.getStringExtra("tenSV");
         intent.putExtra("maSV",maSV);
         intent.putExtra("DocumentId",docID);
+        intent.putExtra("tenSV",tenSV);
         System.out.println("ALEEEEEEEEEALEEEEEEEEE -- "+docID);
         intent.putExtra("Username",user);
         startActivity(intent);

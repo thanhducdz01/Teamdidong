@@ -1,13 +1,13 @@
-package com.example.team_project;
+package com.example.team_project.ChatModule;
 
-import android.content.Context;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.team_project.R;
 
 import java.util.List;
 
@@ -27,15 +27,12 @@ public class MessageApdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == VIEW_TYPE_SENT){
-            return  new SentMessageViewHolder(
-                    View.inflate(parent.getContext(), R.layout.chat_item_right,parent)
-//                    View view = LayoutInflater.from(context).inflate(R.layout.chat_item_right,parent,false);
-////        return new MessageApdapter.ViewHolder(view);
-            );
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item_right, parent, false);
+            return  new SentMessageViewHolder(v);
         }else{
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item_receive, parent, false);
             return new ReceiveMessageViewHolder(
-                    View.inflate(parent.getContext(), R.layout.chat_item_receive,parent)
-            );
+                    v);
         }
     }
 
@@ -63,25 +60,29 @@ public class MessageApdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     static class SentMessageViewHolder extends RecyclerView.ViewHolder{
-        public TextView send_message;
+        public TextView send_message,timeSent;
         public SentMessageViewHolder(@NonNull View itemView) {
             super(itemView);
             send_message = itemView.findViewById(R.id.show_message);
+            timeSent = itemView.findViewById(R.id.txt_timeMessage);
         }
         void setData(ChatMessage chatMessage){
             send_message.setText(chatMessage.message);
+            timeSent.setText(chatMessage.dateTime);
 
         }
     }
 
     static class ReceiveMessageViewHolder extends RecyclerView.ViewHolder{
-        public TextView receive_message;
+        public TextView receive_message,timeReceive;
         public ReceiveMessageViewHolder(@NonNull View itemView) {
             super(itemView);
             receive_message = itemView.findViewById(R.id.receive_message);
+            timeReceive = itemView.findViewById(R.id.txt_timeMessageReceive);
         }
         void setData(ChatMessage chatMessage){
             receive_message.setText(chatMessage.message);
+            timeReceive.setText(chatMessage.dateTime);
 
         }
     }

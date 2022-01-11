@@ -1,9 +1,8 @@
-package com.example.team_project;
+package com.example.team_project.ChatModule;
 
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
@@ -11,18 +10,19 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.team_project.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -37,6 +37,7 @@ public class chatbox_details_Activity extends AppCompatActivity {
     List<ChatMessage> chatMessages;
     private MessageApdapter messageApdapter;
     private FirebaseFirestore database;
+    private String conversionId = null;
     EditText textsend;
     User receiveUser;
     TextView txtStudenname;
@@ -56,8 +57,6 @@ public class chatbox_details_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-//                Intent intent = new Intent(chatbox_details_Activity.this,chatbox_Activity.class);
-//                startActivity(intent);
             }
         });
 
@@ -112,6 +111,7 @@ public class chatbox_details_Activity extends AppCompatActivity {
                     chatMessage.message = documentChange.getDocument().getString("Message");
                     chatMessage.dateTime = getReaderableTime(documentChange.getDocument().getDate("Time"));
                     chatMessage.dateObject =documentChange.getDocument().getDate("Time");
+                    System.out.println("HIEN RA NEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
                     chatMessages.add(chatMessage);
                 }
             }
@@ -121,11 +121,12 @@ public class chatbox_details_Activity extends AppCompatActivity {
                 messageApdapter.notifyDataSetChanged();
             }else{
                 messageApdapter.notifyItemRangeInserted(chatMessages.size(), chatMessages.size());
-
-
             }
             message_content = findViewById(R.id.message_content);
             message_content.setVisibility(View.VISIBLE);
+        }
+        if (conversionId == null){
+            checkForConversion();
         }
 
     };
@@ -148,6 +149,7 @@ public class chatbox_details_Activity extends AppCompatActivity {
         Intent intentget = getIntent();
         receiveUser = (User) intentget.getSerializableExtra("Username");
         String docID = intentget.getStringExtra("DocumentId");
+        String tenSV = intentget.getStringExtra("tenSV");
         String msg = textsend.getText().toString();
         HashMap<String, Object> message = new HashMap<>();
         message.put("senderID",docID);
@@ -155,6 +157,18 @@ public class chatbox_details_Activity extends AppCompatActivity {
         message.put("Message",msg);
         message.put("Time",new Date());
         database.collection("Chat").add(message);
+        if (conversionId != null){
+            updateConversion(msg);
+        }else{
+            HashMap<String, Object> conversion = new HashMap<>();
+            conversion.put("senderID",docID);
+            conversion.put("senderName",tenSV);
+            conversion.put("receiveID",receiveUser.id);
+            conversion.put("receiverID",receiveUser.name);
+            conversion.put("lastMessage",msg);
+            conversion.put("Time",new Date());
+            addConversion(conversion);
+        }
         textsend.setText(null);
     }
 
@@ -166,7 +180,47 @@ public class chatbox_details_Activity extends AppCompatActivity {
     }
 
     private String getReaderableTime(Date date){
-        return new SimpleDateFormat("dd mm yyyy,- hh:mm a", Locale.getDefault()).format(date);
+        return new SimpleDateFormat("dd-MMMM-yyyy, hh:mm ", Locale.getDefault()).format(date);
     }
+
+    private void addConversion(HashMap<String, Object> conversion){
+        database.collection("Conversations")
+                .add(conversion)
+                .addOnSuccessListener(documentReference -> conversionId = documentReference.getId());
+    }
+
+    private void updateConversion(String message){
+        DocumentReference documentReference = database.collection("Conversations").document(conversionId);
+        documentReference.update(
+                "lastMessage",message,
+                "Time",new Date()
+
+        );
+    }
+
+    private void checkForConversion(){
+        Intent intentget = getIntent();
+        receiveUser = (User) intentget.getSerializableExtra("Username");
+        String docID = intentget.getStringExtra("DocumentId");
+        if (chatMessages.size() != 0){
+            checkForConversionRemote(docID,receiveUser.id);
+            checkForConversionRemote(receiveUser.id,docID);
+        }
+    }
+
+    private void checkForConversionRemote(String senderID, String receiveID){
+        database.collection("Conversations")
+                .whereEqualTo("senderID",senderID)
+                .whereEqualTo("receiveID",receiveID)
+                .get()
+                .addOnCompleteListener(conversionOncompelete);
+    }
+
+    private final OnCompleteListener <QuerySnapshot> conversionOncompelete = task -> {
+        if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0){
+            DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+            conversionId = documentSnapshot.getId();
+        }
+    };
 
 }

@@ -26,6 +26,18 @@
             android:textSize="15dp"
 
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_timeMessage"
+            android:layout_below="@id/show_message"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:text="12.10"
+            android:layout_marginRight="10dp"
+            android:textSize="10dp"
+            />
 
     </RelativeLayout>
 
