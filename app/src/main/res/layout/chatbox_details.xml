@@ -113,8 +113,8 @@
             android:layout_above="@+id/layout_send_message"
             android:layout_below="@+id/layout_name_chatbox"
             android:layout_marginBottom="5dp"
-            app:stackFromEnd="true"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:stackFromEnd="true">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -123,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:weightSum="8">
@@ -167,56 +167,5 @@
     </RelativeLayout>
 
 
-    <LinearLayout
-        android:id="@+id/layout_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bottom_rec"
-        android:orientation="horizontal"
-        android:weightSum="4">
-
-        <ImageButton
-            android:id="@+id/button_homepage"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/trangchu"
-            tools:ignore="SpeakableTextPresentCheck">
-
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/button_notification"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/thongbao"
-            tools:ignore="SpeakableTextPresentCheck">
-
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/button_chatbox"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/chat"
-            tools:ignore="SpeakableTextPresentCheck">
-
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/button_student"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/student"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </LinearLayout>
 
 </RelativeLayout>

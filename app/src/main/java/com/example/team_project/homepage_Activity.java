@@ -88,6 +88,7 @@ public class homepage_Activity extends AppCompatActivity {
                 Intent intent = new Intent(homepage_Activity.this, student_information.class);
                 intent.putExtra("maSV",maSV);
                 intent.putExtra("DocumentId",DocumentID);
+                intent.putExtra("tenSV",studentName);
                 System.out.println("ALEEEEEEEEEALEEEEEEEEE -- "+DocumentID);
                 intent.putExtra("tokenUser",tokenUser);
                 startActivity(intent);

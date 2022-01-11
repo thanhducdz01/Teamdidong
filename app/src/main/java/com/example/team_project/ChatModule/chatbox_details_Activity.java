@@ -164,7 +164,7 @@ public class chatbox_details_Activity extends AppCompatActivity {
             conversion.put("senderID",docID);
             conversion.put("senderName",tenSV);
             conversion.put("receiveID",receiveUser.id);
-            conversion.put("receiverID",receiveUser.name);
+            conversion.put("receiverName",receiveUser.name);
             conversion.put("lastMessage",msg);
             conversion.put("Time",new Date());
             addConversion(conversion);

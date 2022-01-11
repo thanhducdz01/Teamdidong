@@ -17,9 +17,11 @@ import java.util.List;
 public class apdater_chatbox  extends  RecyclerView.Adapter<apdater_chatbox.ConversionVieHolder>{
 
         private final List<ChatMessage> chatMessages;
+        private final ConversionListener conversionListener;
 
-    public apdater_chatbox(List<ChatMessage> chatMessages) {
+    public apdater_chatbox(List<ChatMessage> chatMessages, ConversionListener conversionListener) {
         this.chatMessages = chatMessages;
+        this.conversionListener = conversionListener;
     }
 
     @NonNull
@@ -55,6 +57,12 @@ public class apdater_chatbox  extends  RecyclerView.Adapter<apdater_chatbox.Conv
                 txtHinh.setImageResource(R.drawable.user);
                 txtTen.setText(chatMessage.conversionName);
                 txtNoiDung.setText(chatMessage.message);
+                MainlineChatbox.setOnClickListener(v -> {
+                    User user = new User();
+                    user.id = chatMessage.conversionId;
+                    user.name = chatMessage.conversionName;
+                    conversionListener.onConversionClick(user);
+                });
             }
 
         }

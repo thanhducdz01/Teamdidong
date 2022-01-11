@@ -91,6 +91,8 @@ public class student_information extends AppCompatActivity {
         String maSV = intentget.getStringExtra("maSV");
         String tokenUser = intentget.getStringExtra("tokenUser");
         String docID = intentget.getStringExtra("DocumentId");
+        String tenSV = intentget.getStringExtra("tenSV");
+
 
 
         homepage.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +109,9 @@ public class student_information extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(student_information.this, chatbox_Activity.class);
+                intent.putExtra("maSV",maSV);
+                intent.putExtra("tenSV",tenSV);
+                intent.putExtra("DocumentId",docID);
                 startActivity(intent);
             }
         });

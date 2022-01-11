@@ -10,7 +10,8 @@
         android:id="@+id/img_student"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"/>
 
     <ImageView
         android:id="@+id/btn_chatbox_details"
