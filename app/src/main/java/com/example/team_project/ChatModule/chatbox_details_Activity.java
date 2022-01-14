@@ -59,12 +59,6 @@ public class chatbox_details_Activity extends AppCompatActivity {
                 finish();
             }
         });
-
-//        message_content = findViewById(R.id.message_content);
-//        message_content.setHasFixedSize(true);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-//        linearLayoutManager.setStackFromEnd(true);
-//        message_content.setLayoutManager(linearLayoutManager);
         textsend = findViewById(R.id.edittext_send);
         btn_send = findViewById(R.id.btn_send);
         listText = new ArrayList<>();
