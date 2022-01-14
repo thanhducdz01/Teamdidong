@@ -37,7 +37,7 @@
                     android:src="@drawable/next" />
 
                 <TextView
-
+                    android:id="@+id/tietBD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -48,6 +48,7 @@
                     android:textSize="20dp" />
 
                 <TextView
+                    android:id="@+id/tietKT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"

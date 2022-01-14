@@ -27,7 +27,6 @@
             android:textSize="24dp"
             android:textStyle="bold" />
 
-
         <ImageButton
             android:id="@+id/back_header"
             android:layout_width="50dp"
@@ -36,7 +35,6 @@
             android:maxHeight="30dp"
             android:src="@drawable/back1_left" />
     </RelativeLayout>
-
 
     <RelativeLayout
         android:id="@+id/layout_body"
@@ -179,7 +177,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/day">
+            <ListView
+                android:id="@+id/listviewTKB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            >
 
+            </ListView>
         </RelativeLayout>
 
     </RelativeLayout>

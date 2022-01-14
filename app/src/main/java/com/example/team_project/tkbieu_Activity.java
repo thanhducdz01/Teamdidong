@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -21,15 +22,26 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 
+import java.util.ArrayList;
+
 public class tkbieu_Activity extends AppCompatActivity {
     RelativeLayout btn_t2,btn_t3,btn_t4;
     String urlGetData ="http://192.168.145.1/Didong/ketnoi.php";
+    ListView LvTKB;
+    ArrayList<tkb> arrayTKB;
+    TKBAdapter adapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getSupportActionBar().hide();
         setContentView(R.layout.activity_tkb);
+        LvTKB =(ListView) findViewById(R.id.listviewTKB);
+        arrayTKB = new ArrayList<>();
+        adapter = new TKBAdapter(this,R.layout.fragment_tkb_t2, arrayTKB);
+        LvTKB.setAdapter(adapter);
+
         GetData(urlGetData);
+
         ImageView imageView = (ImageView) findViewById(R.id.back_header);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
