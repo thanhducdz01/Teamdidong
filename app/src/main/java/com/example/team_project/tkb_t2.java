@@ -28,6 +28,14 @@ public class tkb_t2 extends Fragment {
         txtidPhong=(TextView) view.findViewById(R.id.idPhong);
         txtMonHoc =(TextView) view.findViewById(R.id.Monhoc);
 
+        Bundle bundle = getArguments();
+        if (bundle!= null)
+        {
+            txttietBD.setText(bundle.getString("ten"));
+            txttietKT.setText(bundle.getString("ten"));
+            txtidPhong.setText(bundle.getString("ten"));
+            txtMonHoc.setText(bundle.getString("ten"));
+        }
         return  view;
     }
 

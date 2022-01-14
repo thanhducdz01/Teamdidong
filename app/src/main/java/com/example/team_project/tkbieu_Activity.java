@@ -59,6 +59,8 @@ public class tkbieu_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 replaceFragment(new tkb_t2());
+                Bundle bundle = new Bundle();
+                bundle.putString("ten" , "lop"); //tesst//
                 btn_t2.setBackgroundColor(1);
                 btn_t3.setBackgroundResource(R.drawable.boderday);
                 btn_t4.setBackgroundResource(R.drawable.boderday);
