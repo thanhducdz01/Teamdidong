@@ -21,6 +21,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -97,7 +99,22 @@ public class tkbieu_Activity extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Toast.makeText(tkbieu_Activity.this, response.toString(),Toast.LENGTH_SHORT).show();
+                        for(int i = 0 ;i <response.length(); i++)
+                        {
+                            try {
+                                JSONObject object = response.getJSONObject(i);
+                                arrayTKB.add(new tkb (
+                                        object.getString("idTKB"),
+                                        object.getInt("tietBD"),
+                                        object.getInt("tietKT"),
+                                        object.getString("idPhong"),
+                                        object.getString("Monhoc")
+                                ));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
                     }
                 },
                 new Response.ErrorListener() {
