@@ -1,9 +1,10 @@
-package com.example.team_project;
+package com.example.team_project.ChatModule;
 
 public class message_model {
     private String sender;
     private String receiver;
     private String message;
+
 
     public message_model(String sender, String receiver, String message) {
         this.sender = sender;

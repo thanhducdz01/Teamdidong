@@ -34,7 +34,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Xin chào, Nguyễn Vũ Dũng"
+            android:text="Xin chào, "
             android:textColor="@color/light_font"
             android:textSize="15dp" />
 
@@ -50,7 +50,7 @@
             android:shadowDx="1"
             android:shadowDy="7"
             android:shadowRadius="5"
-            android:text="Mã sinh viên: 1911505310109"
+            android:text="Mã sinh viên:"
             android:textColor="@color/light_font"
             android:textSize="13dp" />
 
@@ -63,7 +63,7 @@
             android:layout_marginRight="20dp"
             android:layout_toLeftOf="@+id/line"
             android:fontFamily="@font/roboto_light"
-            android:text="Điện - Điện Tử"
+            android:text="Điện"
             android:textColor="@color/white"
             android:textSize="15dp" />
 
@@ -76,7 +76,7 @@
             android:layout_marginTop="25dp"
             android:layout_toRightOf="@+id/line"
             android:fontFamily="@font/roboto_light"
-            android:text="Lớp: 19T1"
+            android:text="Lớp"
             android:textColor="@color/white"
             android:textSize="15dp" />
 
@@ -112,6 +112,19 @@
             android:layout_marginBottom="30dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/logout" />
+
+        <ImageButton
+            android:id="@+id/btn_changePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/password_24" />
+
+
 
     </RelativeLayout>
 
@@ -197,13 +210,13 @@
                 android:layout_weight="1">
 
                 <ImageButton
-                    android:onClick="ShowPopup"
                     android:id="@+id/edit_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="30dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="ShowPopup"
                     android:src="@drawable/edit" />
 
                 <ImageView
