@@ -6,9 +6,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/crv_cdk"
-        android:layout_width="290dp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
         app:cardCornerRadius="15dp"
@@ -16,7 +16,7 @@
         android:layout_centerVertical="true">
 
         <RelativeLayout
-            android:layout_width="290dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_cdk"
             android:background="@drawable/view_item_daotao">
@@ -29,24 +29,24 @@
                 android:layout_marginBottom="10dp">
 
                 <TextView
-                    android:id="@+id/item_title"
+                    android:id="@+id/item_tenMH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:text="Học phần đại cương"
+                    android:text="Công nghệ phần mền"
                     android:textColor="#000"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/item_note"
+                    android:id="@+id/item_stc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="15dp"
-                    android:text="Xem chi tiết"
+                    android:text="2 chỉ"
                     android:textColor="#000"
                     android:textSize="12sp"
                     android:textStyle="italic" />

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.team_project">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/logoute"
-        android:label="UTE "
-
+        android:label="UTE"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Team_Project">
+        android:theme="@style/Theme.Team_Project"
+        android:usesCleartextTraffic="true"
+        >
+        <activity
+            android:name=".ThongTinChiTietLHP"
+            android:exported="false" />
         <activity
             android:name=".activity_Lichthi"
             android:exported="true" />
@@ -17,14 +21,14 @@
             android:exported="true" />
         <activity
             android:name=".tkbieu_Activity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Change_Completed"
             android:exported="true" />
         <activity
             android:name=".New_Password"
             android:exported="true" />
-      <activity
+        <activity
             android:name=".Forgot"
             android:exported="true" />
         <activity
@@ -41,6 +45,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

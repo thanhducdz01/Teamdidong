@@ -11,6 +11,7 @@ import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,29 +48,44 @@ public class LopHocPhan extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        Ckick_child();
 
 
 
     }
 
+    private void Ckick_child()
+    {
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int group, int child, long l) {
+                String tenLHP = groupObjects.get(group).getTitle();
+                String tenCTLHP= listMap.get(groupObjects.get(group)).get(child).getTitle();
+                Intent intent = new Intent(LopHocPhan.this, ThongTinChiTietLHP.class);
+                intent.putExtra("tenLHP",tenLHP);
+                intent.putExtra("tenCTLHP", tenCTLHP);
+                startActivity(intent);
+                return false;
+            }
+        });
+    }
     private Map<GroupObject,List<ItemObject>> getListMap(){
         Map<GroupObject, List<ItemObject>> objectListMap = new HashMap<>();
 
-        GroupObject groupObject1 = new GroupObject(1,R.drawable.book_open,"Chương Trình Đào Tạo");
-        GroupObject groupObject2 = new GroupObject(2,R.drawable.list_not,"Lớp Học Phần Chưa Đăng Ký");
-        GroupObject groupObject3 = new GroupObject(3,R.drawable.list,"Lớp Học Phần Đã Đăng Ký");
+        GroupObject groupObject1 = new GroupObject(1,R.drawable.book_open,"Chương trình đào tạo");
+        GroupObject groupObject2 = new GroupObject(2,R.drawable.list_not,"Lớp học phần đăng ký");
+        GroupObject groupObject3 = new GroupObject(3,R.drawable.list,"Lớp học phần chưa đăng ký");
 
 
         List<ItemObject> itemObjects1 = new ArrayList<>();
-        itemObjects1.add(new ItemObject(1,"Chường trình cử nhân","Xem chi tiêt"));
-        itemObjects1.add(new ItemObject(2,"Chường trình kỹ sư","Xem chi tiêt"));
+        itemObjects1.add(new ItemObject(1,"Chương trình cử nhân","Xem chi tiêt"));
+        itemObjects1.add(new ItemObject(2,"Chương trình kỹ sư","Xem chi tiêt"));
 
         List<ItemObject> itemObjects2 = new ArrayList<>();
         itemObjects2.add(new ItemObject(3,"Học phần đại cương","Xem chi tiêt"));
         itemObjects2.add(new ItemObject(4,"Học phần kỹ năng mềm","Xem chi tiêt"));
         itemObjects2.add(new ItemObject(5,"Học phần bắt buộc","Xem chi tiêt"));
-        itemObjects2.add(new ItemObject(6,"Học phần tự chọn bắc buộc","Xem chi tiêt"));
+        itemObjects2.add(new ItemObject(6,"Học phần tự chọn bắt buộc","Xem chi tiêt"));
         itemObjects2.add(new ItemObject(7,"Học phần giáo dục thể chất","Xem chi tiêt"));
         itemObjects2.add(new ItemObject(8,"Học phần ngoại ngữ","Xem chi tiêt"));
 
@@ -77,7 +93,7 @@ public class LopHocPhan extends AppCompatActivity {
         itemObjects3.add(new ItemObject(9,"Học phần đại cương","Xem chi tiêt"));
         itemObjects3.add(new ItemObject(10,"Học phần kỹ năng mềm","Xem chi tiêt"));
         itemObjects3.add(new ItemObject(11,"Học phần bắt buộc","Xem chi tiêt"));
-        itemObjects3.add(new ItemObject(12,"Học phần tự chọn bắc buộc","Xem chi tiêt"));
+        itemObjects3.add(new ItemObject(12,"Học phần tự chọn bắt buộc","Xem chi tiêt"));
         itemObjects3.add(new ItemObject(13,"Học phần giáo dục thể chất","Xem chi tiêt"));
         itemObjects3.add(new ItemObject(14,"Học phần ngoại ngữ","Xem chi tiêt"));
 
