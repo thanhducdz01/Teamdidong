@@ -29,7 +29,7 @@ public class Forgot extends AppCompatActivity {
 
     String forgot;
     EditText txtForgot;
-    String url = "http://192.168.0.103/Android_ute/forgot.php";
+    String url = "http://10.0.2.2/Android_ute/forgot.php";
 
     loadingdialog loading;
     @Override

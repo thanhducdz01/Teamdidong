@@ -29,7 +29,7 @@ public class Mic_Login extends AppCompatActivity {
 
     String Mail, MatKhau365;
     EditText txtMail, txtMatKhau365;
-    String url = "http://192.168.0.103/Android_ute/login_acc_microsoft.php";
+    String url = "http://10.0.2.2/Android_ute/login_acc_microsoft.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
