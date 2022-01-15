@@ -53,6 +53,11 @@ public class notification_Activity extends AppCompatActivity{
         getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.notification);
         getView();
+        Intent intentget = getIntent();
+        String maSV = intentget.getStringExtra("maSV");
+        String DocID = intentget.getStringExtra("DocumentId");
+        String tenSV = intentget.getStringExtra("tenSV");
+        System.out.println("DOC CU MEN NHANH DC: " + DocID);
         notificationArrayList = new ArrayList<>();
         recNotiview = findViewById(R.id.recViewNoti);
         notificationAdapter = new notificationAdapter(notificationArrayList,this);
@@ -72,6 +77,9 @@ public class notification_Activity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(notification_Activity.this, chatbox_Activity.class);
+                intent.putExtra("maSV", maSV);
+                intent.putExtra("DocumentId", DocID);
+                intent.putExtra("tenSV", tenSV);
                 startActivity(intent);
             }
         });
@@ -80,6 +88,9 @@ public class notification_Activity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(notification_Activity.this, student_information.class);
+                intent.putExtra("maSV", maSV);
+                intent.putExtra("DocumentId", DocID);
+                intent.putExtra("tenSV", tenSV);
                 startActivity(intent);
             }
         });

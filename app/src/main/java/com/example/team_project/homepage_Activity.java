@@ -58,7 +58,7 @@ public class homepage_Activity extends AppCompatActivity {
     LinearLayout btn_lichthi;
     LinearLayout btn_ketqua;
     TextView txtInfo;
-    String maSV="1911505310205";
+    String maSV="1911505310109";
     static String DocumentID,tokenUser;
     static String studentName;
     private static final String URLgetProfile= "http://192.168.0.103/UTEapp/getProfile.php";
@@ -90,7 +90,6 @@ public class homepage_Activity extends AppCompatActivity {
                 intent.putExtra("maSV",maSV);
                 intent.putExtra("DocumentId",DocumentID);
                 intent.putExtra("tenSV",studentName);
-                System.out.println("ALEEEEEEEEEALEEEEEEEEE -- "+DocumentID);
                 intent.putExtra("tokenUser",tokenUser);
                 startActivity(intent);
             }
@@ -113,6 +112,10 @@ public class homepage_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(homepage_Activity.this, notification_Activity.class);
+                intent.putExtra("maSV",maSV);
+                intent.putExtra("DocumentId",DocumentID);
+                intent.putExtra("tenSV",studentName);
+                intent.putExtra("tokenUser",tokenUser);
                 startActivity(intent);
             }
         });
