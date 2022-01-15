@@ -58,7 +58,7 @@ public class homepage_Activity extends AppCompatActivity {
     LinearLayout btn_lichthi;
     LinearLayout btn_ketqua;
     TextView txtInfo;
-    String maSV="1911505310109";
+    static String maSV;
     static String DocumentID,tokenUser;
     static String studentName;
     private static final String URLgetProfile= "http://192.168.0.103/UTEapp/getProfile.php";
@@ -71,6 +71,8 @@ public class homepage_Activity extends AppCompatActivity {
         btn_tkb =findViewById(R.id.btn_tkb);
         btn_lichthi = findViewById(R.id.btn_lichthi);
         btn_ketqua = findViewById(R.id.btn_ketqua);
+        Intent intent = getIntent();
+        maSV = intent.getStringExtra("maSV");
     }
 
     @Override

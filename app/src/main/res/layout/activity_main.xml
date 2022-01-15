@@ -19,7 +19,7 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical">
         <EditText
-
+            android:id="@+id/txtMaSV"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -28,8 +28,9 @@
             android:background="@drawable/edittext_edit"
             android:drawableLeft="@drawable/ic_action_name"
             android:textColor="@color/black"
-            android:hint="Student Code"/>
+            android:hint="Mã sinh viên"/>
         <EditText
+            android:id="@+id/txtMatKhau"
             android:drawableLeft="@drawable/ic_action_password"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -38,7 +39,7 @@
             android:paddingLeft="10dp"
             android:background="@drawable/edittext_edit"
             android:inputType="textPassword"
-            android:hint="Password"/>
+            android:hint="Mật khẩu"/>
         <TextView
             android:id="@+id/forgot_password"
             android:layout_width="wrap_content"
@@ -52,7 +53,7 @@
             android:id="@+id/btn_login"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
+            android:text="đăng nhập"
             android:textSize="24dp"
             android:background="@drawable/button_edit"
             android:textFontWeight="300"
