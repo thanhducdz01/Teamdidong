@@ -17,7 +17,7 @@
             android:name=".activity_ketqua"
             android:exported="true" />
         <activity
-            android:name=".tkbieu_Activity"
+            android:name=".Splash"
             android:exported="true"/>
         <activity
             android:name=".Change_Completed"
@@ -38,7 +38,7 @@
             android:name=".LopHocPhan"
             android:exported="true" />
         <activity
-            android:name=".Splash"
+            android:name=".ThoiKhoaBieu_Module.tkbieu_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

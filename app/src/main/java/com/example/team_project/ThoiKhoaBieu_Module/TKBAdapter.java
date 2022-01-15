@@ -1,25 +1,22 @@
-package com.example.team_project;
+package com.example.team_project.ThoiKhoaBieu_Module;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.team_project.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class TKBAdapter extends RecyclerView.Adapter<TKBAdapter.tkbViewHolder> {
     private ArrayList<tkb> tkbArrayList;
-    private tkbieu_Activity context;
 
-    public TKBAdapter(ArrayList<tkb> tkbArrayList, tkbieu_Activity context) {
+    public TKBAdapter(ArrayList<tkb> tkbArrayList) {
         this.tkbArrayList = tkbArrayList;
-        this.context = context;
     }
     @NonNull
     @Override

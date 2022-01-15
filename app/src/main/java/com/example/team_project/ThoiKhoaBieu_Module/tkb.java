@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.ThoiKhoaBieu_Module;
 
 public class tkb {
     private String idTKB;
