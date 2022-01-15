@@ -60,134 +60,140 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.228" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="250dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/boder_cardview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relativeLayout"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:background="@drawable/boder_cardview"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.312"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.485">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Học kỳ C"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:text="Học kỳ C"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:text="17/09/2021 | 7:00 am | A302"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-    </RelativeLayout>
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="17/09/2021 | 7:00 am | A302"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
+<!--    </RelativeLayout>-->
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="250dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/boder_cardview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.31"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.078">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relativeLayout2"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:background="@drawable/boder_cardview"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.31"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"-->
+<!--        app:layout_constraintVertical_bias="0.078">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="TH XML"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:text="TH XML"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:text="17/09/2021 | 7:00 am | A301"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-    </RelativeLayout>
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="17/09/2021 | 7:00 am | A301"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
+<!--    </RelativeLayout>-->
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout3"
-        android:layout_width="250dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/boder_cardview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.31"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
-        app:layout_constraintVertical_bias="0.133">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relativeLayout3"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:background="@drawable/boder_cardview"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.31"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"-->
+<!--        app:layout_constraintVertical_bias="0.133">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="th Web"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:text="th Web"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:text="24/08/2021 | 9:00 am | A305"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-    </RelativeLayout>
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="24/08/2021 | 9:00 am | A305"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
+<!--    </RelativeLayout>-->
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout4"
-        android:layout_width="250dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/boder_cardview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
-        app:layout_constraintVertical_bias="0.174">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relativeLayout4"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:background="@drawable/boder_cardview"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.312"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"-->
+<!--        app:layout_constraintVertical_bias="0.174">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Học kỳ C"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:text="Học kỳ C"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:text="17/09/2021 | 7:00 am | A302"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="17/09/2021 | 7:00 am | A302"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textStyle="bold" />-->
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 
     <RelativeLayout
         android:id="@+id/relativeLayout5"
@@ -219,7 +225,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewlt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lịch thi"
@@ -231,7 +237,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.369" />
+    <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textViewlt">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listviewLT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </FrameLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
