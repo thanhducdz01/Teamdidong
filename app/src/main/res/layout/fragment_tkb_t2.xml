@@ -6,11 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".tkb_t2">
 
+
+
+
+
     <RelativeLayout
-        android:id="@+id/t1"
+        android:id="@+id/t2"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        >
+    >
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -28,7 +32,6 @@
                 android:background="@drawable/rec_cardview">
 
                 <ImageView
-                    android:id="@+id/detail_noti"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -37,100 +40,26 @@
                     android:src="@drawable/next" />
 
                 <TextView
-                    android:id="@+id/tietBD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="TietBD"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-
-
-                <TextView
-                    android:id="@+id/tietKT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="120dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="TietKT"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-                <TextView
-                    android:id="@+id/idPhong"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="210dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="idPhong"
+                    android:text="9:00 AM   /P107"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/Monhoc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="35dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Lập trình trên điện thoại di động ..."
+                    android:text="Thiết kế giao diện người dùng"
                     android:textColor="@color/black"
                     android:textSize="18dp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
-    </RelativeLayout>
-
-<!--    <RelativeLayout-->
-<!--        android:id="@+id/t2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:layout_below="@id/t1">-->
-
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="20dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:clickable="true"-->
-<!--            android:foreground="?android:attr/selectableItemBackground"-->
-<!--            app:cardCornerRadius="10dp">-->
-
-<!--            <RelativeLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/rec_cardview">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:layout_centerVertical="true"-->
-<!--                    android:layout_marginRight="10dp"-->
-<!--                    android:src="@drawable/next" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginLeft="20dp"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:fontFamily="@font/roboto_bold"-->
-<!--                    android:text="9:00 AM   /P107"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="20dp" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginLeft="20dp"-->
-<!--                    android:layout_marginTop="35dp"-->
-<!--                    android:fontFamily="@font/roboto_bold"-->
-<!--                    android:text="Thiết kế giao diện người dùng"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="18dp" />-->
-<!--            </RelativeLayout>-->
-<!--        </androidx.cardview.widget.CardView>-->
 
 
 <!--    </RelativeLayout>-->
@@ -295,5 +224,5 @@
 <!--                    android:textSize="18dp" />-->
 <!--            </RelativeLayout>-->
 <!--        </androidx.cardview.widget.CardView>-->
-    </RelativeLayout>
-<!--</RelativeLayout>-->
+</RelativeLayout>
+</RelativeLayout>

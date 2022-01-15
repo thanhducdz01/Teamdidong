@@ -23,11 +23,6 @@ public class tkb_t2 extends Fragment {
         // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_tkb_t2, container, false);
         View view =inflater.inflate(R.layout.fragment_tkb_t2,container,false);
-        txttietBD =(TextView) view.findViewById(R.id.tietBD);
-        txttietKT=(TextView) view.findViewById(R.id.tietKT);
-        txtidPhong=(TextView) view.findViewById(R.id.idPhong);
-        txtMonHoc =(TextView) view.findViewById(R.id.Monhoc);
-
         Bundle bundle = getArguments();
         if (bundle!= null)
         {
