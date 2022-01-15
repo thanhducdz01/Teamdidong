@@ -3,6 +3,7 @@ package com.example.team_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class LopHocPhan extends AppCompatActivity {
@@ -61,6 +63,20 @@ public class LopHocPhan extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView expandableListView, View view, int group, int child, long l) {
                 String tenLHP = groupObjects.get(group).getTitle();
                 String tenCTLHP= listMap.get(groupObjects.get(group)).get(child).getTitle();
+                String text = "Chương trình cử nhân";
+                String text1 = "Chương trình kỹ sư";
+                if(tenCTLHP.toLowerCase().equals(text.toLowerCase()))
+                {
+                    gotoUrl("http://daotao.ute.udn.vn/CNTT_7480201_CN.pdf");
+                    return false;
+                }
+                else
+                    if(tenCTLHP.toLowerCase().equals(text1.toLowerCase()))
+                {
+                    gotoUrl("http://daotao.ute.udn.vn/CNTT_7480201_KS.pdf");
+                    return false;
+                }
+
                 Intent intent = new Intent(LopHocPhan.this, ThongTinChiTietLHP.class);
                 intent.putExtra("tenLHP",tenLHP);
                 intent.putExtra("tenCTLHP", tenCTLHP);
@@ -68,6 +84,11 @@ public class LopHocPhan extends AppCompatActivity {
                 return false;
             }
         });
+    }
+    private void gotoUrl(String url)
+    {
+        Uri uri = Uri.parse(url);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
     private Map<GroupObject,List<ItemObject>> getListMap(){
         Map<GroupObject, List<ItemObject>> objectListMap = new HashMap<>();
