@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rec_cardview"
+    android:layout_marginBottom="10dp"
+    android:paddingLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="10dp"
+    >
+
+    <ImageView
+        android:id="@+id/btn_chatbox_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/next" />
+
+    <TextView
+        android:id="@+id/txt_tkbTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Tên"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txt_tkbRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text=" /Tên Phòng"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/txt_tkbTime"
+        />
+
+
+    <TextView
+        android:id="@+id/text_noidungtkb"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_tkbTime"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="10dp"
+        android:text="A da gui 1 tin nhan"
+        android:textColor="@color/black"
+        android:textSize="17dp" />
+</RelativeLayout>

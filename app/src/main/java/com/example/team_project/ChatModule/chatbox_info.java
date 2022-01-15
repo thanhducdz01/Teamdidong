@@ -1,4 +1,4 @@
-package com.example.team_project;
+package com.example.team_project.ChatModule;
 
 public class chatbox_info {
     private String ten;

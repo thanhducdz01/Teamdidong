@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <EditText
+            android:id="@+id/txtMail"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -33,8 +34,9 @@
             android:paddingLeft="20dp"
             android:inputType="textEmailAddress"
             android:background="@drawable/edittext_edit"
-            android:hint="Student Email"/>
+            android:hint="Nhập Mail sinh viên"/>
         <EditText
+            android:id="@+id/txtMatKhau365"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -42,21 +44,13 @@
             android:paddingLeft="20dp"
             android:background="@drawable/edittext_edit"
             android:inputType="textPassword"
-            android:hint="Password"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forgot Password?"
-            android:layout_gravity="right"
-            android:id="@+id/forgot"
-            android:layout_marginTop="40dp"
-            android:textColor="@color/bluebutton"
-            android:layout_marginRight="50dp"/>
+            android:hint="Mật khẩu"/>
+
         <Button
             android:id="@+id/btn_micLogin"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Login with Office 365"
+            android:text="Đăng nhập Office 365"
             android:textSize="24dp"
             android:background="@drawable/button_edit"
             android:textFontWeight="300"

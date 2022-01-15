@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_homepage"
+    tools:context=".ChatModule.userList">
+
+    <ImageButton
+        android:id="@+id/btn_backChatbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/previous" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_user"
+        android:layout_toRightOf="@id/btn_backChatbox"
+        android:layout_marginTop="17dp"
+        android:text="Chọn người dùng"
+        android:textSize="23dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="@color/black"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btn_backChatbox"
+        android:layout_alignParentBottom="true"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/userRecycler"
+            android:overScrollMode="never"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            />
+
+    </FrameLayout>
+</RelativeLayout>

@@ -22,25 +22,26 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"/>
 
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/edittext_edit"
-            android:hint="Student Email"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="100dp"
-            android:inputType="textEmailAddress"/>
-        <Button
-            android:id="@+id/conti1"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_edit"
-            android:text="Continue"
-            android:layout_marginTop="150dp"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:textSize="24dp"
-            android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/txtforgot"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edittext_edit"
+        android:hint="Nhập mail sinh viên"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:inputType="textEmailAddress"/>
+    <Button
+        android:id="@+id/conti1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_edit"
+        android:text="Hoàn thành"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
 
 </LinearLayout>

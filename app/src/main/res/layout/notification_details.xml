@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_homepage"
-    tools:context=".MainActivity">
+    tools:context=".NotificationModule.notification_details_Activity">
 
     <RelativeLayout
         android:id="@+id/layout_header"
@@ -71,10 +71,10 @@
         android:src="@drawable/previous" />
 
     <RelativeLayout
-        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_below="@+id/btn_back"
+        android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/rec_cardview_detail">
@@ -91,7 +91,8 @@
             android:textSize="20dp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/noti_content"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
             android:layout_marginLeft="20dp"
@@ -106,7 +107,7 @@ Cập nhật thêm chức năng mới"
             />
 
         <TextView
-            android:id="@+id/day"
+            android:id="@+id/noti_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -123,56 +124,5 @@ Cập nhật thêm chức năng mới"
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bottom_rec"
-        android:orientation="horizontal"
-        android:weightSum="4">
-
-        <ImageButton
-            android:id="@+id/button_homepage"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/trangchu"
-            tools:ignore="SpeakableTextPresentCheck">
-
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/button_notification"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/thongbao"
-            tools:ignore="SpeakableTextPresentCheck">
-
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/button_chatbox"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/chat"
-            tools:ignore="SpeakableTextPresentCheck">
-
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/button_student"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/student"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </LinearLayout>
 
 </RelativeLayout>
