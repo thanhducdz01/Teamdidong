@@ -61,7 +61,7 @@ public class homepage_Activity extends AppCompatActivity {
     static String maSV, newMSV;
     static String DocumentID,tokenUser;
     static String studentName;
-    private static final String URLgetProfile= "http://192.168.0.103/UTEapp/getProfile.php";
+    private static final String URLgetProfile= "http://10.0.2.2/UTEapp/getProfile.php";
 
     void getView() {
         btn_info_student = findViewById(R.id.img_button_student);
