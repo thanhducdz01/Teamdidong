@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     String MaSv, MatKhau;
     EditText txtMaSV, txtMatKhau;
-    String url = "http://192.168.0.103/Android_ute/login.php";
+    String url = "http://10.0.2.2:81/Android_ute/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);

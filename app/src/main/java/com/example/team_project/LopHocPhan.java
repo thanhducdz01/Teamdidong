@@ -28,6 +28,7 @@ public class LopHocPhan extends AppCompatActivity {
     private Map<GroupObject,List<ItemObject>> listMap;
     private ExpandableAdapter adapter;
 
+    static String maSV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,10 @@ public class LopHocPhan extends AppCompatActivity {
         setContentView(R.layout.activity_lop_hoc_phan);
         getSupportActionBar().hide();
 
+        if(maSV == null){
+            Intent intent = getIntent();
+            maSV = intent.getStringExtra("maSV");
+        }
         expandableListView = (ExpandableListView) findViewById(R.id.expand_listview);
         listMap = getListMap();
         groupObjects = new ArrayList<>(listMap.keySet());
@@ -50,7 +55,9 @@ public class LopHocPhan extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Ckick_child();
+
 
 
 
@@ -77,9 +84,10 @@ public class LopHocPhan extends AppCompatActivity {
                     return false;
                 }
 
-                Intent intent = new Intent(LopHocPhan.this, ThongTinChiTietLHP.class);
+                Intent intent = new Intent(LopHocPhan.this, ThongTinChiTietLhpActivity.class);
                 intent.putExtra("tenLHP",tenLHP);
                 intent.putExtra("tenCTLHP", tenCTLHP);
+                intent.putExtra("maSV", maSV);
                 startActivity(intent);
                 return false;
             }
@@ -94,7 +102,7 @@ public class LopHocPhan extends AppCompatActivity {
         Map<GroupObject, List<ItemObject>> objectListMap = new HashMap<>();
 
         GroupObject groupObject1 = new GroupObject(1,R.drawable.book_open,"Chương trình đào tạo");
-        GroupObject groupObject2 = new GroupObject(2,R.drawable.list_not,"Lớp học phần đăng ký");
+        GroupObject groupObject2 = new GroupObject(2,R.drawable.list_not,"Lớp học phần đã đăng ký");
         GroupObject groupObject3 = new GroupObject(3,R.drawable.list,"Lớp học phần chưa đăng ký");
 
 

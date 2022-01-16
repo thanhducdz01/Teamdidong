@@ -49,15 +49,15 @@ public class CTLHP_Adapter extends BaseAdapter implements Filterable {
         ViewHolder holder;
         if(view == null){
             holder = new ViewHolder();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        view = inflater.inflate(layout,null);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(layout,null);
 
-        // anh xa
-        holder.tenMH = (TextView) view.findViewById(R.id.item_tenMH);
-        holder.stc   = (TextView) view.findViewById(R.id.item_stc);
+            // anh xa
+            holder.tenMH = (TextView) view.findViewById(R.id.item_tenMH);
+            holder.stc   = (TextView) view.findViewById(R.id.item_stc);
 
-        // gan gia tri
-       view.setTag(holder);
+            // gan gia tri
+            view.setTag(holder);
         }
         else
         {

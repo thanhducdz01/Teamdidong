@@ -28,19 +28,24 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class ThongTinChiTietLHP extends AppCompatActivity {
+public class ThongTinChiTietLhpActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<CTLHP> arrayList;
     CTLHP_Adapter adapter;
     SearchView searchView;
     String url ="http://10.0.2.2:81/ute/getdata_ttCTLHP.php";
 
+    static String maSV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thong_tin_chi_tiet_lhp);
         ActionBar actionBar = getSupportActionBar();
 
+        if(maSV == null){
+            Intent intent = getIntent();
+            maSV = intent.getStringExtra("maSV");
+        }
         listView = (ListView) findViewById(R.id.listview_ct);
         arrayList = new ArrayList<>();
 
@@ -50,8 +55,7 @@ public class ThongTinChiTietLHP extends AppCompatActivity {
         Intent intent = getIntent();
         String tenLHP = String.valueOf(intent.getStringExtra("tenLHP"));
         String tenCTLHP = String.valueOf(intent.getStringExtra("tenCTLHP"));
-        String masv = "1911505310109";
-        GetData(url, masv, tenLHP, tenCTLHP);
+        GetData(url, maSV, tenLHP, tenCTLHP);
     }
 
     private void GetData(String url, String masv, String tenLHP, String tenCTLHP) {
@@ -60,20 +64,20 @@ public class ThongTinChiTietLHP extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Toast.makeText(ThongTinChiTietLHP.this,masv+" " + tenLHP + " " + tenCTLHP,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ThongTinChiTietLhpActivity.this,masv+" " + tenLHP + " " + tenCTLHP,Toast.LENGTH_SHORT).show();
                         for (int i = 0;i<response.length();i++)
                         {
 
                             try {
                                 JSONObject object = response.getJSONObject(i);
                                 if( masv.trim().equals(object.getString("MaSV")) &&
-                                   tenLHP.trim().equals(object.getString("TenLHP")) &&
-                                    tenCTLHP.trim().equals(object.getString("TenCTLHP"))
+                                        tenLHP.trim().equals(object.getString("TenLHP")) &&
+                                        tenCTLHP.trim().equals(object.getString("TenCTLHP"))
                                 ){
-                                arrayList.add(new CTLHP(
-                                        object.getString("TenMH"),
-                                        object.getInt("STC")
-                                ));}
+                                    arrayList.add(new CTLHP(
+                                            object.getString("TenMH"),
+                                            object.getInt("STC")
+                                    ));}
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -84,7 +88,7 @@ public class ThongTinChiTietLHP extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ThongTinChiTietLHP.this,"Lỗi"+error,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ThongTinChiTietLhpActivity.this,"Lỗi"+error,Toast.LENGTH_SHORT).show();
                     }
                 }
         );

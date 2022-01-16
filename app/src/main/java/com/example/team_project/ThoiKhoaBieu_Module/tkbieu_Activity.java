@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class tkbieu_Activity extends AppCompatActivity {
     RelativeLayout btn_t2,btn_t3,btn_t4,btn_t5,btn_t6,btn_t7;
     private ImageButton btn_back;
-    String urlGetData ="http://192.168.0.103/Didong/ketnoi.php";
+    String urlGetData ="http://10.0.2.2:81/Didong/ketnoi.php";
     RecyclerView LvTKB;
     ArrayList<tkb> arrayTKB;
     TKBAdapter adapter;

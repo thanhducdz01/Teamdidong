@@ -61,7 +61,7 @@ public class homepage_Activity extends AppCompatActivity {
     static String maSV;
     static String DocumentID,tokenUser;
     static String studentName;
-    private static final String URLgetProfile= "http://192.168.0.103/UTEapp/getProfile.php";
+    private static final String URLgetProfile= "http://10.0.2.2:81/UTEapp/getProfile.php";
 
     void getView() {
         btn_info_student = findViewById(R.id.img_button_student);
@@ -127,6 +127,7 @@ public class homepage_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(homepage_Activity.this, LopHocPhan.class);
+                intent.putExtra("maSV", maSV);
                 startActivity(intent);
             }
         });

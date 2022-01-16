@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/hoem_page"
-    tools:context=".ThongTinChiTietLHP"
+    tools:context=".ThongTinChiTietLhpActivity"
     >
 
 
@@ -13,7 +13,7 @@
     <RelativeLayout
         android:id="@+id/layout_body"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="680dp"
         android:layout_above="@+id/layout_bottom"
         >
 
