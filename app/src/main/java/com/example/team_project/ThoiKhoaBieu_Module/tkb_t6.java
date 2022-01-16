@@ -30,7 +30,7 @@ import java.util.Map;
 public class tkb_t6 extends Fragment {
 
     RecyclerView RecView_T6;
-    String urlGetData ="http://10.0.2.2/Didong/ketnoi.php";
+    String urlGetData ="http://192.168.0.103/Didong/ketnoi.php";
     ArrayList<tkb> arrayTKB;
     TKBAdapter adapter;
     //    static String masv="1911505310115";

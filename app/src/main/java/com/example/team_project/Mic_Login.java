@@ -74,8 +74,15 @@ public class Mic_Login extends AppCompatActivity {
                 public void onResponse(String response) {
                     if (response.equals("success")){
                         Intent intent = new Intent(Mic_Login.this, homepage_Activity.class);
+                        String[] splits = Mail.split("@", 2);
+                        for (String item : splits){
+                            System.out.println("HEHEHEHEHEHEHEE: "+item);
+                         intent.putExtra("maSV",item);
                         startActivity(intent);
                         finish();
+                        break;
+                        }
+
                     }else if(response.equals("fail")){
                         Toast.makeText(Mic_Login.this, "Sai mật khẩu hoặc tài khoản", Toast.LENGTH_SHORT).show();
                     }

@@ -2,13 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.team_project">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logoute"
         android:label="UTE "
-
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Team_Project">
+        android:theme="@style/Theme.Team_Project"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ChatModule.userList"
+            android:exported="true" />
         <activity
             android:name=".activity_Lichthi"
             android:exported="true" />
@@ -16,15 +22,15 @@
             android:name=".activity_ketqua"
             android:exported="true" />
         <activity
-            android:name=".tkbieu_Activity"
-            android:exported="true"/>
+            android:name=".ThoiKhoaBieu_Module.tkbieu_Activity"
+            android:exported="true" />
         <activity
             android:name=".Change_Completed"
             android:exported="true" />
         <activity
             android:name=".New_Password"
             android:exported="true" />
-      <activity
+        <activity
             android:name=".Forgot"
             android:exported="true" />
         <activity
@@ -41,26 +47,37 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".firebase.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".chatbox_details_Activity"
+            android:name=".ChatModule.chatbox_details_Activity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".NotificationModule.notification_details_Activity"
             android:exported="true" />
         <activity
-            android:name=".notification_details_Activity"
+            android:name=".ChatModule.chatbox_Activity"
             android:exported="true" />
         <activity
-            android:name=".chatbox_Activity"
+            android:name=".NotificationModule.notification_Activity"
             android:exported="true" />
         <activity
-            android:name=".notification_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".student_information"
+            android:name=".StudentProfileModule.student_information"
             android:exported="true" />
     </application>
 

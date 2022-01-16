@@ -80,6 +80,9 @@ public class chatbox_Activity extends AppCompatActivity implements  ConversionLi
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(chatbox_Activity.this, notification_Activity.class);
+                intent.putExtra("maSV", maSV);
+                intent.putExtra("DocumentId", DocID);
+                intent.putExtra("tenSV", tenSV);
                 startActivity(intent);
             }
         });
