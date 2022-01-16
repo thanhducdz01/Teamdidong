@@ -185,13 +185,14 @@ public class student_information extends AppCompatActivity {
 
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
         DocumentReference documentReference = firestore.collection("Users").document(DocumentID);
-
         HashMap<String, Object> updates = new HashMap<>();
         updates.put("token", FieldValue.delete());
         documentReference.update(updates)
                 .addOnSuccessListener(unused -> {
-                    finishAffinity();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
                 });
 
     }
