@@ -33,7 +33,7 @@ public class ThongTinChiTietLhpActivity extends AppCompatActivity {
     ArrayList<CTLHP> arrayList;
     CTLHP_Adapter adapter;
     SearchView searchView;
-    String url ="http://10.0.2.2:81/ute/getdata_ttCTLHP.php";
+    String url ="http://192.168.0.103/UTEapp/getdata_ttCTLHP.php";
 
     static String maSV;
     @Override

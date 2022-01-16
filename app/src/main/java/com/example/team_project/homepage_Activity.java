@@ -58,10 +58,10 @@ public class homepage_Activity extends AppCompatActivity {
     LinearLayout btn_lichthi;
     LinearLayout btn_ketqua;
     TextView txtInfo;
-    static String maSV;
+    static String maSV, newMSV;
     static String DocumentID,tokenUser;
     static String studentName;
-    private static final String URLgetProfile= "http://10.0.2.2:81/UTEapp/getProfile.php";
+    private static final String URLgetProfile= "http://192.168.0.103/UTEapp/getProfile.php";
 
     void getView() {
         btn_info_student = findViewById(R.id.img_button_student);
@@ -71,6 +71,18 @@ public class homepage_Activity extends AppCompatActivity {
         btn_tkb =findViewById(R.id.btn_tkb);
         btn_lichthi = findViewById(R.id.btn_lichthi);
         btn_ketqua = findViewById(R.id.btn_ketqua);
+        Intent intentget = getIntent();
+        Bundle extras = intentget.getExtras();
+        if (extras != null) {
+            newMSV = intentget.getStringExtra("maSV");
+        }
+        if(maSV == null){
+            Intent intent = getIntent();
+            maSV = intent.getStringExtra("maSV");
+        }
+        else if(maSV != null && newMSV != null && maSV != newMSV){
+            maSV = newMSV;
+        }
         if(maSV == null){
             Intent intent = getIntent();
             maSV = intent.getStringExtra("maSV");

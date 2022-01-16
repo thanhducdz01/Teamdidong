@@ -37,7 +37,7 @@ public class notification_Activity extends AppCompatActivity{
     ArrayList<notification> notificationArrayList;
     notificationAdapter notificationAdapter;
     RecyclerView recNotiview;
-    String url ="http://10.0.2.2:81/UTEapp/getNotification.php";
+    String url ="http://192.168.0.103/UTEapp/getNotification.php";
     void getView() {
         homepage = findViewById(R.id.img_button_homepage);
         btn_chatbox = findViewById(R.id.img_button_chatbox);
