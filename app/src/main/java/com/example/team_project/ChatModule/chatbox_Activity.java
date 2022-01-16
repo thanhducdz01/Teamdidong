@@ -101,6 +101,8 @@ public class chatbox_Activity extends AppCompatActivity implements  ConversionLi
         adapter = new apdater_chatbox(conversations, this);
         lvChat = findViewById(R.id.recListChat);
         lvChat.setAdapter(adapter);
+
+
         database = FirebaseFirestore.getInstance();
 
     }

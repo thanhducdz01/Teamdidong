@@ -60,8 +60,8 @@ public class student_information extends AppCompatActivity {
     TextView stuname,txt_msv,txt_khoa,txtlop,edtEmail,edtPhone,edtAddress,edtDate,edtGender;
     ImageButton btn_email,btn_phone,btn_add,btn_date,btn_gender;
     static String oldpas;
-    private static final String URLgetProfile= "http://10.0.2.2/UTEapp/getProfile.php";
-    private static final String URLupdateProfile= "http://10.0.2.2/UTEapp/updateInfo.php";
+    private static final String URLgetProfile= "http://10.0.2.2:81/UTEapp/getProfile.php";
+    private static final String URLupdateProfile= "http://10.0.2.2:81/UTEapp/updateInfo.php";
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     void getView() {

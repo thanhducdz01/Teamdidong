@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Team_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ThongTinChiTietLHP"
+            android:exported="false" />
+        <activity
             android:name=".ChatModule.userList"
             android:exported="true" />
         <activity
